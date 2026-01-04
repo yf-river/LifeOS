@@ -1,9 +1,11 @@
 'use client';
 
 import { useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNotesStore, useUIStore } from '@/store';
 import { NoteCard } from './NoteCard';
 import { Skeleton } from '@/components/ui/skeleton';
+import { fadeInUp, staggerContainer, listItem } from '@/styles/animations';
 
 /**
  * 笔记列表组件 - 严格按照 Get笔记 spec 实现
@@ -92,21 +94,24 @@ export function NoteList() {
     );
   }
 
-  // 空状态
+  // 空状态 - 由父组件 MainContent 处理
   if (notes.length === 0) {
-    return (
-      <div className="flex flex-col items-center justify-center h-64 text-[#8a8f99]">
-        <div className="text-6xl mb-4">📝</div>
-        <p className="text-lg font-medium">暂无笔记</p>
-        <p className="text-sm mt-1">在上方输入框开始记录你的想法</p>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className="py-6 space-y-6">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="py-6 space-y-6"
+    >
       {groupedNotes.map(([groupLabel, groupNotes]) => (
-        <div key={groupLabel}>
+        <motion.div
+          key={groupLabel}
+          variants={fadeInUp}
+          className="space-y-4"
+        >
           {/* 日期分隔线 */}
           <div className="flex items-center gap-4 mb-4">
             <div className="flex-1 h-px bg-[#e4e4e7]" />
@@ -115,18 +120,28 @@ export function NoteList() {
           </div>
 
           {/* 笔记卡片列表 */}
-          <div className="space-y-4">
-            {groupNotes.map((note) => (
-              <NoteCard
-                key={note.id}
-                note={note}
-                onClick={() => handleNoteClick(note)}
-                isSelected={currentNote?.id === note.id}
-              />
-            ))}
-          </div>
-        </div>
+          <motion.div className="space-y-4" variants={staggerContainer}>
+            <AnimatePresence>
+              {groupNotes.map((note) => (
+                <motion.div
+                  key={note.id}
+                  variants={listItem}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  layout
+                >
+                  <NoteCard
+                    note={note}
+                    onClick={() => handleNoteClick(note)}
+                    isSelected={currentNote?.id === note.id}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }

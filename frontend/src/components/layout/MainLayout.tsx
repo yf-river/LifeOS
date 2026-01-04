@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useUIStore, useAuthStore, useNotesStore, useTagsStore } from '@/store';
 import { Sidebar } from './Sidebar';
 import { MainContent } from './MainContent';
@@ -12,12 +13,12 @@ import { Toast } from '../ui/toast';
 import { cn } from '@/lib/utils';
 
 /**
- * 主布局组件 - 严格按照 Get笔记 spec 实现三栏布局
+ * 主布局组件 - Get笔记风格三栏布局
  * 
  * 布局结构：
  * ┌──────────┬─────────────────────────────┬──────────────┐
  * │ 侧边栏    │   主内容区（笔记列表+编辑器） │  AI 助手面板  │
- * │ (175px)  │        (774px)              │   (280px)    │
+ * │(175/60px)│        (自适应)              │   (280px)    │
  * └──────────┴─────────────────────────────┴──────────────┘
  */
 export function MainLayout() {
@@ -37,11 +38,7 @@ export function MainLayout() {
   // 全局键盘快捷键
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Cmd/Ctrl + K 打开搜索
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        // TODO: 打开搜索
-      }
+      // Cmd/Ctrl + K 打开搜索（SearchBar 组件处理）
       // Cmd/Ctrl + N 新建笔记
       if ((e.metaKey || e.ctrlKey) && e.key === 'n') {
         e.preventDefault();
@@ -51,6 +48,11 @@ export function MainLayout() {
           json_content: '{"type":"doc","content":[]}',
         });
       }
+      // Cmd/Ctrl + \ 切换侧边栏
+      if ((e.metaKey || e.ctrlKey) && e.key === '\\') {
+        e.preventDefault();
+        useUIStore.getState().toggleSidebar();
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -59,17 +61,17 @@ export function MainLayout() {
 
   return (
     <div className="flex h-screen bg-[#f2f2f3] overflow-hidden">
-      {/* 侧边栏 - 固定 175px */}
-      <aside
-        className={cn(
-          'h-full flex-shrink-0 bg-[#fafafa] border-r border-[#e4e4e7] transition-all duration-200',
-          sidebarOpen ? 'w-[175px]' : 'w-0 overflow-hidden'
-        )}
+      {/* 侧边栏 - 可折叠 */}
+      <motion.aside
+        initial={false}
+        animate={{ width: sidebarOpen ? 175 : 60 }}
+        transition={{ duration: 0.2, ease: 'easeInOut' }}
+        className="h-full flex-shrink-0 bg-[#fafafa] border-r border-[#e4e4e7]"
       >
         <Sidebar />
-      </aside>
+      </motion.aside>
 
-      {/* 主内容区 - 774px（或自适应） */}
+      {/* 主内容区 - 自适应 */}
       <main className="flex-1 min-w-0 h-full overflow-hidden">
         {activeMenu === 'tags' ? (
           <TagManager />
@@ -81,14 +83,20 @@ export function MainLayout() {
       </main>
 
       {/* AI 助手面板 - 280px */}
-      <aside
+      <motion.aside
+        initial={false}
+        animate={{ 
+          width: aiPanelOpen ? 280 : 0,
+          opacity: aiPanelOpen ? 1 : 0
+        }}
+        transition={{ duration: 0.2, ease: 'easeInOut' }}
         className={cn(
-          'h-full flex-shrink-0 bg-white border-l border-[#e4e4e7] transition-all duration-200',
-          aiPanelOpen ? 'w-[280px]' : 'w-0 overflow-hidden'
+          'h-full flex-shrink-0 bg-white border-l border-[#e4e4e7] overflow-hidden',
+          aiPanelOpen && 'shadow-[-4px_0_20px_rgba(0,0,0,0.05)]'
         )}
       >
         <AIPanel />
-      </aside>
+      </motion.aside>
 
       {/* 版本冲突对话框 */}
       {conflictData && <ConflictDialog />}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
@@ -239,10 +240,10 @@ export function Omnibar() {
       {/* 输入框容器 */}
       <div
         className={cn(
-          'bg-white rounded-xl border transition-all relative',
-          isFocused 
-            ? 'border-[#ccc] shadow-[0px_4px_24px_0px_rgba(0,0,0,0.05)]' 
-            : 'border-[#e5e6ea]'
+          'bg-white rounded-xl border transition-all duration-200 ease-in-out relative',
+          isFocused
+            ? 'border-[#ccc] shadow-textarea'
+            : 'border-[#e5e6ea] hover:border-[#d4d4d7]'
         )}
       >
         {/* 上传中遮罩 */}
@@ -280,10 +281,10 @@ export function Omnibar() {
             onClick={handleSubmit}
             disabled={!hasContent || isSubmitting || isUploading}
             className={cn(
-              'px-4 py-1.5 rounded-lg text-sm font-medium transition-colors',
+              'px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out',
               hasContent && !isSubmitting && !isUploading
-                ? 'bg-[#111418] text-white hover:bg-[#333]'
-                : 'bg-[rgba(41,45,52,0.1)] text-white cursor-not-allowed'
+                ? 'bg-[#111418] text-white hover:bg-[#333] shadow-card hover:shadow-card-hover'
+                : 'bg-[rgba(41,45,52,0.1)] text-white cursor-not-allowed opacity-50'
             )}
           >
             {isSubmitting ? '发送中...' : '发送'}
@@ -328,17 +329,20 @@ export function Omnibar() {
         <p className="text-sm text-[#8a8f99] mb-2">你还可以：</p>
         <div className="flex gap-3">
           {QUICK_ACTIONS.map((action) => (
-            <button
+            <motion.button
               key={action.id}
               onClick={() => handleQuickAction(action.id)}
-              className="flex-1 flex items-center gap-3 px-4 py-3 bg-white rounded-lg border border-[#e5e6ea] hover:border-[#ccc] hover:shadow-sm transition-all"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
+              className="flex-1 flex items-center gap-3 px-4 py-3 bg-white rounded-lg border border-[#e5e6ea] hover:border-[#ccc] hover:shadow-card transition-all duration-200 ease-in-out"
             >
               <QuickActionIcon name={action.icon} color={action.color} />
               <div className="text-left">
                 <p className="text-sm font-medium text-[#333639]">{action.label}</p>
                 <p className="text-xs text-[#8a8f99]">{action.subtitle}</p>
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
@@ -366,14 +370,14 @@ function LoadingSpinner() {
 }
 
 // 工具栏按钮
-function ToolbarButton({ 
-  icon, 
-  title, 
-  active, 
-  onClick 
-}: { 
-  icon: string; 
-  title: string; 
+function ToolbarButton({
+  icon,
+  title,
+  active,
+  onClick
+}: {
+  icon: string;
+  title: string;
   active?: boolean;
   onClick?: () => void;
 }) {
@@ -382,18 +386,20 @@ function ToolbarButton({
       onClick={onClick}
       title={title}
       className={cn(
-        'w-8 h-8 flex items-center justify-center rounded hover:bg-[#f5f5f5] transition-colors',
-        active && 'bg-[#f0f0f0]'
+        'w-8 h-8 flex items-center justify-center rounded transition-all duration-150 ease-out',
+        active
+          ? 'bg-[#f0f0f0] shadow-sm'
+          : 'hover:bg-[#f5f5f5] hover:shadow-sm'
       )}
     >
-      <ToolbarIcon name={icon} />
+      <ToolbarIcon name={icon} active={active} />
     </button>
   );
 }
 
 // 工具栏图标
-function ToolbarIcon({ name }: { name: string }) {
-  const color = '#8a8f99';
+function ToolbarIcon({ name, active }: { name: string; active?: boolean }) {
+  const color = active ? '#111418' : '#8a8f99';
   
   switch (name) {
     case 'image':

@@ -1,19 +1,24 @@
 'use client';
 
-import { useUIStore, useAuthStore } from '@/store';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useUIStore, useAuthStore, useNotesStore } from '@/store';
 import { cn } from '@/lib/utils';
 
 /**
  * 侧边栏组件 - 严格按照 Get笔记 spec 实现
  * 
- * 结构（175px 固定宽度）：
+ * 结构（175px 固定宽度，可折叠至 60px）：
  * ┌─────────────────┐
- * │ [Logo: Get笔记]  │
+ * │ [Logo: Get笔记]  │ ← 可点击折叠
  * ├─────────────────┤
  * │ ● 首页          │ 44px 高度
  * │   AI助手        │
  * │   知识库        │
  * │   标签          │
+ * │   回收站        │
+ * ├─────────────────┤
+ * │ [新建笔记按钮]   │
  * ├─────────────────┤
  * │ [用户头像/信息]  │
  * └─────────────────┘
@@ -21,134 +26,246 @@ import { cn } from '@/lib/utils';
 
 // 菜单项配置
 const MENU_ITEMS = [
-  { id: 'home', label: '首页', icon: 'shouye' },
-  { id: 'ai', label: 'AI助手', icon: 'zhushouxingxiang' },
-  { id: 'knowledge', label: '知识库', icon: 'zhishiku' },
-  { id: 'tags', label: '标签', icon: 'biaoqian1' },
-  { id: 'trash', label: '回收站', icon: 'huishouzhan' },
+  { id: 'home', label: '首页', icon: 'home', shortcut: '⌘1' },
+  { id: 'ai', label: 'AI助手', icon: 'ai', shortcut: '⌘2' },
+  { id: 'knowledge', label: '知识库', icon: 'book', shortcut: '⌘3' },
+  { id: 'tags', label: '标签', icon: 'tag', shortcut: '⌘4' },
+  { id: 'trash', label: '回收站', icon: 'trash', shortcut: '⌘5' },
 ] as const;
 
+// 动画配置
+const sidebarVariants = {
+  expanded: { width: 175 },
+  collapsed: { width: 60 },
+};
+
+const labelVariants = {
+  expanded: { opacity: 1, x: 0, display: 'block' },
+  collapsed: { opacity: 0, x: -10, transitionEnd: { display: 'none' } },
+};
+
 export function Sidebar() {
-  const { activeMenu, setActiveMenu, toggleAIPanel } = useUIStore();
+  const { activeMenu, setActiveMenu, toggleAIPanel, sidebarOpen, toggleSidebar } = useUIStore();
   const { user, logout } = useAuthStore();
+  const { createNote } = useNotesStore();
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleMenuClick = (menuId: typeof MENU_ITEMS[number]['id']) => {
     setActiveMenu(menuId);
-    // 点击 AI 助手时打开/关闭 AI 面板
     if (menuId === 'ai') {
       toggleAIPanel();
     }
   };
 
+  const handleNewNote = () => {
+    createNote({
+      title: '',
+      content: '',
+      json_content: '{"type":"doc","content":[]}',
+    });
+    setActiveMenu('home');
+  };
+
+  // 判断是否折叠态
+  const isCollapsed = !sidebarOpen;
+
   return (
-    <div className="flex flex-col h-full w-[175px] bg-[#fafafa]">
-      {/* Logo */}
-      <div className="h-[76px] flex items-center px-4 border-b border-[#e4e4e7]">
+    <motion.div
+      initial={false}
+      animate={isCollapsed ? 'collapsed' : 'expanded'}
+      variants={sidebarVariants}
+      transition={{ duration: 0.2, ease: 'easeInOut' }}
+      className="flex flex-col h-full bg-[#fafafa] overflow-hidden"
+    >
+      {/* Logo 区域 - 点击折叠/展开 */}
+      <div 
+        className="h-[76px] flex items-center px-4 border-b border-[#e4e4e7] cursor-pointer hover:bg-white/50 transition-colors"
+        onClick={toggleSidebar}
+      >
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#111418] rounded-lg flex items-center justify-center">
-            <span className="text-white text-sm font-bold">G</span>
-          </div>
-          <span className="text-[16px] font-semibold text-[#111418]">Get笔记</span>
+          <motion.div 
+            className="w-8 h-8 bg-gradient-to-br from-[#111418] to-[#2a88ff] rounded-lg flex items-center justify-center shadow-sm"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="text-white text-sm font-bold">L</span>
+          </motion.div>
+          <motion.span 
+            variants={labelVariants}
+            className="text-[16px] font-semibold text-[#111418] whitespace-nowrap"
+          >
+            LifeOS
+          </motion.span>
         </div>
       </div>
 
       {/* 主菜单 */}
-      <nav className="flex-1 py-2">
+      <nav className="flex-1 py-3 px-2">
         <ul className="space-y-1">
           {MENU_ITEMS.map((item) => (
             <li key={item.id}>
-              <button
+              <motion.button
                 onClick={() => handleMenuClick(item.id)}
+                onMouseEnter={() => setHoveredItem(item.id)}
+                onMouseLeave={() => setHoveredItem(null)}
                 className={cn(
-                  'w-full h-[44px] flex items-center gap-3 px-4 text-[16px] font-medium transition-colors',
+                  'w-full h-[44px] flex items-center gap-3 px-3 text-[15px] font-medium rounded-xl transition-all duration-200 relative',
                   activeMenu === item.id
-                    ? 'text-[#111418] bg-white'
-                    : 'text-[#8a8f99] hover:text-[#111418] hover:bg-white/50'
+                    ? 'text-[#111418] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
+                    : 'text-[#8a8f99] hover:text-[#111418] hover:bg-white/60'
                 )}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <MenuIcon name={item.icon} active={activeMenu === item.id} />
-                <span>{item.label}</span>
-              </button>
+                <motion.span variants={labelVariants} className="whitespace-nowrap">
+                  {item.label}
+                </motion.span>
+                
+                {/* 悬浮提示（折叠态） */}
+                <AnimatePresence>
+                  {isCollapsed && hoveredItem === item.id && (
+                    <motion.div
+                      initial={{ opacity: 0, x: -5 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -5 }}
+                      className="absolute left-full ml-2 px-3 py-2 bg-[#111418] text-white text-sm rounded-lg shadow-lg whitespace-nowrap z-50"
+                    >
+                      {item.label}
+                      <span className="ml-2 text-[#8a8f99]">{item.shortcut}</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             </li>
           ))}
         </ul>
       </nav>
 
+      {/* 新建笔记按钮 */}
+      <div className="px-2 pb-3">
+        <motion.button
+          onClick={handleNewNote}
+          className={cn(
+            'w-full h-[44px] flex items-center justify-center gap-2 rounded-xl',
+            'bg-[#2a88ff] text-white font-medium shadow-sm',
+            'hover:bg-[#1a78ef] transition-colors'
+          )}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <PlusIcon className="w-5 h-5" />
+          <motion.span variants={labelVariants} className="whitespace-nowrap">
+            新建笔记
+          </motion.span>
+        </motion.button>
+      </div>
+
       {/* 用户信息 */}
-      <div className="p-4 border-t border-[#e4e4e7]">
-        <div className="flex items-center gap-3">
-          <div className="w-[44px] h-[44px] rounded-full bg-[rgba(173,179,190,0.3)] flex items-center justify-center">
+      <div className="p-3 border-t border-[#e4e4e7]">
+        <div className={cn(
+          'flex items-center gap-3 p-2 rounded-xl hover:bg-white/60 transition-colors cursor-pointer',
+          isCollapsed && 'justify-center'
+        )}>
+          {/* 头像 */}
+          <div className="w-[36px] h-[36px] rounded-full bg-gradient-to-br from-[#adb3be] to-[#8a8f99] flex items-center justify-center flex-shrink-0 overflow-hidden">
             {user?.avatar ? (
-              <img src={user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
+              <img src={user.avatar} alt="" className="w-full h-full object-cover" />
             ) : (
-              <span className="text-[16px] font-medium text-[#8a8f99]">
+              <span className="text-[14px] font-medium text-white">
                 {user?.nickname?.charAt(0) || user?.email?.charAt(0) || '?'}
               </span>
             )}
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[14px] font-medium text-[#333639] truncate">
-              {user?.nickname || user?.email || '未登录'}
+          
+          {/* 用户名和退出按钮 */}
+          <motion.div variants={labelVariants} className="flex-1 min-w-0 flex items-center justify-between">
+            <p className="text-[13px] font-medium text-[#333639] truncate">
+              {user?.nickname || user?.email?.split('@')[0] || '未登录'}
             </p>
-          </div>
-          <button
-            onClick={logout}
-            className="p-2 hover:bg-white rounded-lg transition-colors"
-            title="退出登录"
-          >
-            <LogoutIcon className="w-4 h-4 text-[#8a8f99]" />
-          </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                logout();
+              }}
+              className="p-1.5 hover:bg-[#f0f0f0] rounded-lg transition-colors"
+              title="退出登录"
+            >
+              <LogoutIcon className="w-4 h-4 text-[#8a8f99]" />
+            </button>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
-// 菜单图标组件
+// 菜单图标组件 - 使用精心设计的 SVG 图标
 function MenuIcon({ name, active }: { name: string; active: boolean }) {
   const color = active ? '#111418' : '#8a8f99';
+  const strokeWidth = active ? '2' : '1.5';
   
-  // 使用 SVG 图标（与 Get笔记 的 iconfont 对应）
   switch (name) {
-    case 'shouye':
+    case 'home':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
       );
-    case 'zhushouxingxiang':
+    case 'ai':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z" />
+          <circle cx="8" cy="14" r="1" fill={color} />
+          <circle cx="16" cy="14" r="1" fill={color} />
         </svg>
       );
-    case 'zhishiku':
+    case 'book':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
-          <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          <line x1="8" y1="6" x2="16" y2="6" />
+          <line x1="8" y1="10" x2="14" y2="10" />
         </svg>
       );
-    case 'biaoqian1':
+    case 'tag':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
-          <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z" />
+        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+          <line x1="7" y1="7" x2="7.01" y2="7" />
         </svg>
       );
-    case 'huishouzhan':
+    case 'trash':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="3 6 5 6 21 6" />
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          <line x1="10" y1="11" x2="10" y2="17" />
+          <line x1="14" y1="11" x2="14" y2="17" />
         </svg>
       );
     default:
-      return <div className="w-5 h-5" />;
+      return <div className="w-5 h-5 flex-shrink-0" />;
   }
+}
+
+function PlusIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  );
 }
 
 function LogoutIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
     </svg>
   );
 }
