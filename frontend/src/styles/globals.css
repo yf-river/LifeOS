@@ -1,0 +1,401 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Get笔记 全局样式 - 严格按照 spec 实现
+ * 
+ * 颜色系统（从爬取数据）：
+ * - 主色调：#111418 (深灰偏蓝)
+ * - 背景色：#f2f2f3 (浅灰)
+ * - 边框色：#e4e4e7
+ * - 文字色：#333639 (主要)、#8a8f99 (次要)
+ * - 用户消息：#2a88ff (蓝色)
+ * 
+ * 布局尺寸：
+ * - 侧边栏：175px
+ * - 主内容区：774px
+ * - AI面板：280px
+ * - Header高度：76px
+ * - 菜单项高度：44px
+ */
+
+@layer base {
+  :root {
+    /* Get笔记 配色方案 - 从爬取数据精确还原 */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* 主色调：深灰偏蓝 #1e2329 */
+    --primary: 220 17% 14%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 220 17% 14%;
+    
+    --radius: 0.5rem;
+    
+    /* 侧边栏 */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    
+    /* Header */
+    --header-height: 76px;
+    
+    /* AI 聊天 */
+    --chat-background: #F2F2F3;
+    --aie-chat-item-user-bg-color: #2a88ff;
+    --aie-chat-item-assistant-bg-color: #fff;
+    
+    /* 编辑器相关 - 从爬取数据精确还原 */
+    --aie-text-color: #333;
+    --aie-text-placeholder-color: #adb5bd;
+    --aie-bg-color: #fff;
+    --aie-border-color: #eee;
+    --aie-button-bg-color: #fafafa;
+    --aie-button-border-color: #eee;
+    --aie-button-hover-bg-color: #eee;
+    --aie-button-hover-border-color: #ccc;
+    --aie-menus-bg-color: #ffffff;
+    --aie-menus-text-color: #333;
+    --aie-menus-svg-color: #353535;
+    --aie-menus-divider-color: #eaeaea;
+    --aie-menus-item-hover-color: #eee;
+    --aie-menus-tip-bg-color: #333;
+    --aie-menus-tip-text-color: #eee;
+    --aie-content-blockquote-bg-color: #f6f6f7;
+    --aie-content-blockquote-text-color: #888888;
+    --aie-content-blockquote-border-color: #e3e3e3;
+    --aie-content-codeblock-bg-color: #fafafa;
+    --aie-content-pre-bg-color: #f6f6f7;
+    --aie-content-link-a-color: blue;
+    --aie-content-link-a-hover-color: red;
+    --aie-content-link-a-visited-color: purple;
+    --aie-content-link-a-active-color: green;
+    --aie-content-table-border-color: #ced4da;
+    --aie-content-table-th-bg-color: #efefef;
+    --aie-content-table-selected-bg-color: rgba(200, 200, 255, .3);
+    --aie-input-border-color: #e9e9e9;
+    --aie-input-focus-border-color: #ccc;
+    --aie-popover-bg-color: #fff;
+    --aie-popover-border-color: #e9e9e9;
+    --aie-popover-title-color: #666;
+    --aie-popover-selected-color: #eee;
+    
+    /* 阴影 */
+    --shadow-textarea: 0px 4px 24px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+  }
+}
+
+/* ==================== */
+/* Tiptap 编辑器样式 */
+/* ==================== */
+
+.tiptap.ProseMirror.aie-content {
+  width: 100%;
+  max-width: 710px;
+  font-size: 16px;
+  color: rgb(17, 20, 24);
+  padding: 4px 10px;
+  outline: none;
+  min-height: 100px;
+}
+
+.tiptap.ProseMirror.aie-content p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--aie-text-placeholder-color);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* 引用块 */
+.tiptap blockquote {
+  background-color: var(--aie-content-blockquote-bg-color);
+  border-left: 3px solid var(--aie-content-blockquote-border-color);
+  padding: 8px 16px;
+  margin: 8px 0;
+  color: var(--aie-content-blockquote-text-color);
+}
+
+/* 代码块 */
+.tiptap pre {
+  background-color: var(--aie-content-codeblock-bg-color);
+  padding: 12px 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.tiptap code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-family: monospace;
+}
+
+/* 列表 */
+.tiptap ul,
+.tiptap ol {
+  padding-left: 24px;
+  margin: 8px 0;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+}
+
+/* 链接 */
+.tiptap a {
+  color: var(--aie-content-link-a-color);
+  text-decoration: underline;
+}
+
+.tiptap a:hover {
+  color: var(--aie-content-link-a-hover-color);
+}
+
+.tiptap a:visited {
+  color: var(--aie-content-link-a-visited-color);
+}
+
+.tiptap a:active {
+  color: var(--aie-content-link-a-active-color);
+}
+
+/* 表格 */
+.tiptap table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.tiptap th,
+.tiptap td {
+  border: 1px solid var(--aie-content-table-border-color);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.tiptap th {
+  background-color: var(--aie-content-table-th-bg-color);
+  font-weight: 600;
+}
+
+/* 图片 */
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 分隔线 */
+.tiptap hr {
+  border: none;
+  border-top: 1px solid var(--aie-border-color);
+  margin: 16px 0;
+}
+
+/* 任务列表 */
+.tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tiptap ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
+
+.tiptap ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+
+/* 标题 */
+.tiptap h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.tiptap h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+.tiptap h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 4px;
+}
+
+/* ==================== */
+/* 笔记卡片样式 */
+/* ==================== */
+
+.note-item.card {
+  background: rgb(255, 255, 255);
+  border-radius: 12px;
+}
+
+.note-content.tiptap-preview {
+  font-size: 14px;
+  color: rgb(51, 54, 57);
+  line-height: 1.6;
+}
+
+.note-tags .n-tag {
+  background: rgb(255, 255, 255);
+  color: rgb(103, 112, 132);
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 12px;
+  border: 1px solid #e5e6ea;
+}
+
+.note-tags .n-tag.n-tag--icon.system {
+  padding-left: 4px;
+}
+
+/* ==================== */
+/* 滚动条样式 */
+/* ==================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #787878;
+}
+
+/* ==================== */
+/* 动画 */
+/* ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.2s ease-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.2s ease-out;
+}
