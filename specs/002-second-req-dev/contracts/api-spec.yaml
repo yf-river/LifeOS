@@ -1,0 +1,807 @@
+openapi: 3.0.3
+info:
+  title: Get笔记复刻 API
+  description: |
+    1:1 复刻 Get笔记 Web 端的后端 API。
+    
+    **认证方式**: JWT Bearer Token + CSRF Token
+    
+    **响应格式**: 
+    ```json
+    {
+      "h": { "c": 0, "e": "", "s": 时间戳, "t": 处理时间ms },
+      "c": { /* 业务数据 */ }
+    }
+    ```
+  version: 1.0.0
+  contact:
+    name: huyunfei
+
+servers:
+  - url: http://localhost:8080/api/v1
+    description: 开发环境
+  - url: https://api.example.com/api/v1
+    description: 生产环境
+
+tags:
+  - name: notes
+    description: 笔记 CRUD
+  - name: tags
+    description: 标签管理
+  - name: ai
+    description: AI 功能
+  - name: upload
+    description: 文件上传
+  - name: users
+    description: 用户相关
+
+paths:
+  # ==================== 笔记 CRUD ====================
+  /notes:
+    get:
+      tags: [notes]
+      summary: 获取笔记列表
+      operationId: listNotes
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [create_desc, create_asc, update_desc]
+            default: create_desc
+        - name: q
+          in: query
+          description: 搜索关键词
+          schema:
+            type: string
+        - name: tag_id
+          in: query
+          schema:
+            type: integer
+        - name: status
+          in: query
+          schema:
+            type: integer
+            enum: [0, 1]
+            default: 0
+          description: 0=正常, 1=回收站
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteListResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+    post:
+      tags: [notes]
+      summary: 创建笔记
+      operationId: createNote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateNoteRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  /notes/{id}:
+    get:
+      tags: [notes]
+      summary: 获取笔记详情
+      operationId: getNote
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteResponse'
+      security:
+        - bearerAuth: []
+
+    put:
+      tags: [notes]
+      summary: 更新笔记
+      operationId: updateNote
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateNoteRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteResponse'
+        '409':
+          description: 版本冲突
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionConflictError'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+    delete:
+      tags: [notes]
+      summary: 删除笔记
+      operationId: deleteNote
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  # ==================== 标签管理 ====================
+  /tags:
+    get:
+      tags: [tags]
+      summary: 获取标签列表
+      operationId: listTags
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagListResponse'
+      security:
+        - bearerAuth: []
+
+    post:
+      tags: [tags]
+      summary: 创建标签
+      operationId: createTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  /tags/{id}:
+    delete:
+      tags: [tags]
+      summary: 删除标签
+      operationId: deleteTag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  # ==================== AI 功能 ====================
+  /ai/generate-tags:
+    post:
+      tags: [ai]
+      summary: AI 生成标签
+      operationId: generateTags
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [content]
+              properties:
+                content:
+                  type: string
+                  description: 笔记内容
+                max_tags:
+                  type: integer
+                  default: 5
+                  maximum: 10
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateTagsResponse'
+      security:
+        - bearerAuth: []
+
+  /ai/summarize:
+    post:
+      tags: [ai]
+      summary: AI 生成摘要
+      operationId: summarize
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [content]
+              properties:
+                content:
+                  type: string
+                  description: 要总结的内容
+                max_length:
+                  type: integer
+                  default: 200
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SummarizeResponse'
+      security:
+        - bearerAuth: []
+
+  # ==================== 文件上传 ====================
+  /upload/image:
+    post:
+      tags: [upload]
+      summary: 上传图片 (AI OCR 识别)
+      operationId: uploadImage
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 图片文件 (JPEG/PNG, max 10MB)
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageUploadResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  /upload/link:
+    post:
+      tags: [upload]
+      summary: 提交链接 (AI 分析)
+      operationId: analyzeLink
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [url]
+              properties:
+                url:
+                  type: string
+                  format: uri
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkAnalysisResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  /upload/media:
+    post:
+      tags: [upload]
+      summary: 上传音视频文件
+      operationId: uploadMedia
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 音视频文件 (MP3/WAV/MP4/MOV, max 500MB)
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MediaUploadResponse'
+      security:
+        - bearerAuth: []
+        - csrfToken: []
+
+  /upload/media/{task_id}/status:
+    get:
+      tags: [upload]
+      summary: 查询媒体处理状态
+      operationId: getMediaStatus
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MediaStatusResponse'
+      security:
+        - bearerAuth: []
+
+  # ==================== 用户 ====================
+  /users/me:
+    get:
+      tags: [users]
+      summary: 获取当前用户信息
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+      security:
+        - bearerAuth: []
+
+# ==================== 组件定义 ====================
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    csrfToken:
+      type: apiKey
+      in: header
+      name: X-CSRF-Token
+
+  schemas:
+    # 通用响应包装
+    ResponseHeader:
+      type: object
+      properties:
+        c:
+          type: integer
+          description: 状态码 (0=成功)
+        e:
+          type: string
+          description: 错误信息
+        s:
+          type: integer
+          description: 服务器时间戳
+        t:
+          type: integer
+          description: 处理时间(ms)
+
+    EmptyResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          nullable: true
+
+    # 笔记相关
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+        note_id:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        json_content:
+          type: string
+          description: Tiptap JSON (字符串化)
+        note_type:
+          type: string
+          enum: [plain_text, image, ai_link, audio, video]
+        entry_type:
+          type: string
+        source:
+          type: string
+        version:
+          type: integer
+        status:
+          type: integer
+        is_ai_generated:
+          type: boolean
+        ai_summary:
+          type: string
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    CreateNoteRequest:
+      type: object
+      required: [content, json_content]
+      properties:
+        title:
+          type: string
+          maxLength: 500
+        content:
+          type: string
+        json_content:
+          type: string
+        note_type:
+          type: string
+          default: plain_text
+        entry_type:
+          type: string
+          default: manual
+        source:
+          type: string
+          default: web
+        tags:
+          type: array
+          items:
+            type: string
+
+    UpdateNoteRequest:
+      type: object
+      required: [note_id, version, content, json_content]
+      properties:
+        note_id:
+          type: string
+        version:
+          type: integer
+          description: 当前版本号 (乐观锁)
+        title:
+          type: string
+        content:
+          type: string
+        json_content:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+
+    NoteResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          $ref: '#/components/schemas/Note'
+
+    NoteListResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/Note'
+            has_more:
+              type: boolean
+            total:
+              type: integer
+
+    VersionConflictError:
+      type: object
+      properties:
+        h:
+          type: object
+          properties:
+            c:
+              type: integer
+              example: 409
+            e:
+              type: string
+              example: "版本冲突，请刷新后重试"
+        c:
+          type: object
+          properties:
+            current_version:
+              type: integer
+            your_version:
+              type: integer
+
+    # 标签相关
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        type:
+          type: string
+          enum: [system, user]
+        icon:
+          type: string
+        color:
+          type: string
+        count:
+          type: integer
+          description: 关联笔记数
+
+    CreateTagRequest:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        color:
+          type: string
+
+    TagResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          $ref: '#/components/schemas/Tag'
+
+    TagListResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/Tag'
+            total:
+              type: integer
+
+    # AI 相关
+    GenerateTagsResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: string
+            confidence:
+              type: array
+              items:
+                type: number
+
+    SummarizeResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            summary:
+              type: string
+
+    # 上传相关
+    Attachment:
+      type: object
+      properties:
+        id:
+          type: integer
+        file_type:
+          type: string
+        file_url:
+          type: string
+        thumbnail_url:
+          type: string
+        file_size:
+          type: integer
+        original_name:
+          type: string
+
+    ImageUploadResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            note_id:
+              type: string
+            image_url:
+              type: string
+            ocr_text:
+              type: string
+            ai_summary:
+              type: string
+            ai_tags:
+              type: array
+              items:
+                type: string
+
+    LinkAnalysisResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            note_id:
+              type: string
+            url:
+              type: string
+            title:
+              type: string
+            preview_image:
+              type: string
+            ai_summary:
+              type: string
+            ai_key_points:
+              type: array
+              items:
+                type: string
+            ai_tags:
+              type: array
+              items:
+                type: string
+
+    MediaUploadResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            task_id:
+              type: string
+            status:
+              type: string
+              enum: [processing]
+            estimated_time:
+              type: integer
+              description: 预计处理时间(秒)
+
+    MediaStatusResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          type: object
+          properties:
+            status:
+              type: string
+              enum: [pending, processing, completed, failed]
+            progress:
+              type: integer
+            note_id:
+              type: string
+              description: 完成后返回
+            error_message:
+              type: string
+
+    # 用户相关
+    User:
+      type: object
+      properties:
+        uid:
+          type: integer
+        nickname:
+          type: string
+        avatar:
+          type: string
+        phone:
+          type: string
+
+    UserResponse:
+      type: object
+      properties:
+        h:
+          $ref: '#/components/schemas/ResponseHeader'
+        c:
+          $ref: '#/components/schemas/User'

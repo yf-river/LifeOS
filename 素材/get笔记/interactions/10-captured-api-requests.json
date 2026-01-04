@@ -1,0 +1,85 @@
+{
+  "api": [
+    {
+      "url": "https://c.dun.163.com/api/v2/getconf?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=&id=4edec955fa3c4a5a9819d2947ef36438&ipv6=false&runEnv=10&iv=5&loadVersion=2.5.3&lang=zh-CN&callback=__JSONP_pjpydgz_0",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:34.473Z"
+    },
+    {
+      "url": "https://c.dun.163.com/api/v2/getconf?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=&dt=PI36FbzNFk9EU1EVRUfDm8RJqvPCRrDm&id=4edec955fa3c4a5a9819d2947ef36438&ipv6=false&runEnv=10&iv=5&loadVersion=2.5.3&lang=zh-CN&callback=__JSONP_u0u4v0s_1",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:35.303Z"
+    },
+    {
+      "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=PI36FbzNFk9EU1EVRUfDm8RJqvPCRrDm&irToken=5iJz08s08jREZ1FURQKG39RI%2BrKDd9fn&id=4edec955fa3c4a5a9819d2947ef36438&fp=UwO9zRJj9sM%5CQp3CgKjVXeTz2ByzYi%5CQGOZocUdqo7bN5paR4kxd1VUI1bjydi%5Cf8h3khGNY12yIOjOrCBkBfc5ImhTK9KEuK%2B3aUekEagL4T4qg0NlfiLznsd%5Ct4PxVspkcN3yosmXrDA0mUY6oy2SHlsxvW9NQzekgRQO6MuL9dLRn%3A1767430115100&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=8IvoJYYTnYgjf219mFg.%2FAzOzIOMbfHe351MAuZGaSorP0MHX4EF1BkX%2FNsaAUZx4Cm5McxlZZbH92%2FHbpzGQ2%2BWP1M7&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=&callback=__JSONP_7mm2lax_0",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:35.632Z"
+    },
+    {
+      "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=PI36FbzNFk9EU1EVRUfDm8RJqvPCRrDm&irToken=ES1hbQyVQGJENgUERFfC2pUN%2FrfTZv8D&id=4edec955fa3c4a5a9819d2947ef36438&fp=UwO9zRJj9sM%5CQp3CgKjVXeTz2ByzYi%5CQGOZocUdqo7bN5paR4kxd1VUI1bjydi%5Cf8h3khGNY12yIOjOrCBkBfc5ImhTK9KEuK%2B3aUekEagL4T4qg0NlfiLznsd%5Ct4PxVspkcN3yosmXrDA0mUY6oy2SHlsxvW9NQzekgRQO6MuL9dLRn%3A1767430115100&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=i%2Fe0x2mFak0ICmedR5QiPVxm24J4K18%2BRSs2wM220FGdr559iKBiX2vqq1tCfybtua09ntz6OipUEDXEjvVmazyFw5Q7&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=&callback=__JSONP_vjz2nin_1",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:35.716Z"
+    },
+    {
+      "url": "https://c.dun.163.com/api/v3/check?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=PI36FbzNFk9EU1EVRUfDm8RJqvPCRrDm&id=4edec955fa3c4a5a9819d2947ef36438&token=68c70be6c2a0460785fe758931d8453f&data=%7B%22d%22%3A%22O9DCCCGrl98vUsiejJz6moS%2FHJ1Alr3YwZ2hN4gRgB9P04PqwORfEud%2B.VEbRphz3gqlOMZSpzQ38WGQjPzBNavXAND4Qpxf1aEQQSNwCtG%2FK.29hfeEBzSyf5kcSRJsqKMmmx%2FvhhtzeCKBUeW4k10dU%2FAyPpg5d8fuwaNMOs3ZgPG3J1zv%2FHBZ0rQHeChCy5rQVTYgFbL0%2F4O%2BPRSXnGX%2FIaC1QYKszfiJm6uFatuQSZuQndpvxZ93eGfQZ%2FZzwAHqk%2FiMNQiwYPQlh%2FLM1OntrpvXMLdDNxXWO6In48aKwzB8GHtdPlRKMQpxyxQckCCb6HKGLxy%2FrKRFd%2F8863o3%2FJlfhJXVlXunfQICSfGKLKhe4hJtvlV3.XeOq9fM%2BxmXEiNR5M.hzVe9QYcrHZK.azK%2ByC4xHCzdpo0cnhkEiqdZLr6s4H35tZK3PEa8NAgrOWdJOfEHx%2F1qOsj1KdHQoSQac5BC6fcafuLrIFak6gqITbwbYlaE6gRBcOML5Wk%2Bf21OFtTAgNnx8MxFdS5bbGM2gxYCVm%2FXj%2BrrjNxKzkChPTjT0XJ5gjD1kuuBdZDHqWZSB1YNpAVssPmwS%2Fnnssyvv.dnhKv8gB86JXNC4n5mcgg%2B88CX5vnUxaMNlsJyS84mtXIky8aaPJM94xL199CR6BeH22MtUfqTW204Zq1XbeKySL8Fo2s9z6oNSfCFdzemZViITfc.JlRRfvn0q%2FZal5vjU1iCT1oN8.i6ZW96t8ZkFqpk8XsVOISP4M1wg52r%2FkiN5oFGmnwBVljGu6iP.dREt%2FpP5D%2B%2B1alw2lJRStnh%2Fjv4jynvHbv%2BOxUbD3skIFApD1r0uH3VbTdTaZSgddTz8xo0khhsH3db9SsB6lofedO5Ah1l1%2FjPRawkTGmlxBazhQ8%2BiuOc.KIQcD2llLPvdQyvrCygZvB1lDfW%22%2C%22m%22%3A%22%22%2C%22p%22%3A%22YpHVIShf3lka2ekdvr%2Fyv81w1%2BANZSzTsqwttp3Q.RZ00beE8cC9qr1rOtJaROG6%2BmNiTLCSsMchpq%2BmsYkOM9%2FX3D97%22%2C%22f%22%3A%222RZp1M0YCYeZeIvpc.aQ6tZ3HJ%2BdiDsvOF2IUCiwf6VGVBbCS5KfXB1qGanXgwh06SGh5uTN9FU54qVM46xqfef%2BmC6CstXya1TPUre4HAZYKFiALR3Ums95F3jLDaqunSyOemOpcoZp%2BRjkxtp5IJDjcV1ImW0DqNoSJBtGbmTqi3aMBABxrXi.ZOQQNaUp2ZbDSZYTFCJgYsC4k%2BQtkAl54cnNTfX96%2B546FNEYtnAoFiHsmHxMvCBir5ndjkPHc5iQuWPxBH.wYPPQcB3wLyuy3HcawNMH%2BzQ01tOqb0dv5zeOcQhpgVnp9yJvDOcyqb0jmbB6cANzWmczwesuSyED%2BGxsyUQS2vvUhAMyJO.JWy35Ecdget0LOhFmzSEj8xz.eIjt9BnrDtavTvLxDkuAiR5Cy.zJapsj1S40iaq8oa533Jgf4oZVkH3lrEq2nkS0ebBRFyHgeV6WhqR4ISPj8wBqcEvPeF5d9aMPTZX%2BqNyxShvDdMx4c1AIi9lkprDgX77%22%2C%22ext%22%3A%22hTa%2F53ZMe.qv33o%2F.6Ml3IvIi64UeP5ysaxJUh%2B9posx.feHXFzErEKib12zMFOrqoqb3%2BAnkzPqtgPCoIlm1VO8Hjf7%22%7D&width=250&type=2&version=2.28.5&cb=A5prynNqhfqOvLFOMph1FpIZ33zVr%2BsBeRh8yLx6XNMd0BPSmeKb%2B62.Lzd1BNfbKuBErMabHjZZbJTr%2FKCzTe2.kBX7&user=&extraData=&bf=5001&runEnv=10&sdkVersion=&loadVersion=2.5.3&iv=4&callback=__JSONP_tpkcyxq_2",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:37.161Z"
+    }
+  ],
+  "uploads": [],
+  "ai": [
+    {
+      "url": "https://get-notes.umiwi.com/get_notes_prod%2F202601012358%2Fgetnotes_img_1a55a670400425708gnBrWMP.jpeg?Expires=1769875150&OSSAccessKeyId=LTAI5t7toTp72R3TvdXf9QdK&Signature=0ul39zuSDfwaiOlj39JU%2F9Tmpv0%3D&x-oss-process=image%2Fresize%2Cm_lfit%2Cw_720%2Ch_3240",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://www.biji.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null,
+      "timestamp": "2026-01-03T08:33:47.018Z"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "keys": "Control+b",
+    "name": "粗体",
+    "tested": true
+  },
+  {
+    "keys": "Control+i",
+    "name": "斜体",
+    "tested": true
+  },
+  {
+    "keys": "Control+u",
+    "name": "下划线",
+    "tested": true
+  },
+  {
+    "keys": "Control+z",
+    "name": "撤销",
+    "tested": true
+  },
+  {
+    "keys": "Control+Shift+z",
+    "name": "重做",
+    "tested": true
+  },
+  {
+    "keys": "Control+a",
+    "name": "全选",
+    "tested": true
+  },
+  {
+    "keys": "Control+s",
+    "name": "保存",
+    "tested": true
+  },
+  {
+    "keys": "Control+Enter",
+    "name": "提交",
+    "tested": true
+  }
+]

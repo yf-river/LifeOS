@@ -1,0 +1,382 @@
+[
+  {
+    "timestamp": "2026-01-03T09:41:10.569Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/openinstall-qcubcl.js",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.279Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5MDk5NTgy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.280Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4MzEyNjI5.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.281Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4MTE2NTA1.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.281Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NjIxNDUx.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NTc0Mjg5.jpeg",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NzY3MzY5.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4ODAzODQ1.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4ODExNTcy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5Nzk4Njcw.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.282Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczMzQ2NjM1NjM3.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.284Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTc2MDAwNDYwNjU1.jpeg",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:41:11.526Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5MzE3Mzgy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.231Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/openinstall-qcubcl.js",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"D928774182682E8B332E2D31AB33BA90\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Mon, 17 Nov 2025 08:29:26 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.382Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5MDk5NTgy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"DBCCCC43F6005C7FCDFDC26220BE2BCC\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 09:16:36 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.383Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4MzEyNjI5.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"C961AAABA8AE6FE433F60AFF6D266A19\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 07:05:26 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.383Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4MTE2NTA1.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"AB330BB60C8BB0A9774A061B10A9D511\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 06:32:45 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.383Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NjIxNDUx.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.384Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NTc0Mjg5.jpeg",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"4563E0BCC52B8CA81A2BACCF624A8100\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 07:49:03 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.384Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4NzY3MzY5.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"1A4D3DD11DC7CE1FA9139E4B7119DF1A\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 08:21:14 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.384Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4ODAzODQ1.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.385Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI4ODExNTcy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"F544215D782E29E90CBB89177C702345\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Fri, 27 Dec 2024 08:28:36 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.385Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5Nzk4Njcw.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.388Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczMzQ2NjM1NjM3.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.390Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTc2MDAwNDYwNjU1.jpeg",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "if-none-match": "\"C47B0890F3AAAC74CD2ABA85C64783CD\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "if-modified-since": "Thu, 09 Oct 2025 10:10:07 GMT",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  },
+  {
+    "timestamp": "2026-01-03T09:42:02.529Z",
+    "method": "GET",
+    "url": "https://piccdn2.umiwi.com/fe-oss/default/MTczNTI5MzE3Mzgy.png",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "postDataJson": null
+  }
+]

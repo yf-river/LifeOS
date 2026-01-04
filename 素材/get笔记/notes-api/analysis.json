@@ -1,0 +1,199 @@
+{
+  "notesEndpoints": [],
+  "otherEndpoints": [
+    {
+      "method": "GET",
+      "path": "/note",
+      "url": "https://www.biji.com/note"
+    },
+    {
+      "method": "GET",
+      "path": "/yoda/web/v1/chats/question_resource/config",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config"
+    },
+    {
+      "method": "POST",
+      "path": "/yoda/web/v1/chats/startup_shortcuts",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts"
+    },
+    {
+      "method": "POST",
+      "path": "/yoda/web/v1/chats/startup_questions",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions"
+    },
+    {
+      "method": "GET",
+      "path": "/spacex/v1/web/user/info",
+      "url": "https://notes-api.biji.com/spacex/v1/web/user/info"
+    },
+    {
+      "method": "GET",
+      "path": "/spacex/v1/web/team/list",
+      "url": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0"
+    }
+  ],
+  "uniqueEndpoints": [
+    {
+      "method": "GET",
+      "path": "/note",
+      "fullUrl": "https://www.biji.com/note",
+      "requests": [
+        {
+          "id": 0,
+          "time": "2026-01-03T10:16:12.317Z",
+          "method": "GET",
+          "url": "https://www.biji.com/note",
+          "headers": {
+            "upgrade-insecure-requests": "1",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\""
+          },
+          "body": null,
+          "resourceType": "document"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/yoda/web/v1/chats/question_resource/config",
+      "fullUrl": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+      "requests": [
+        {
+          "id": 1,
+          "time": "2026-01-03T10:16:13.198Z",
+          "method": "GET",
+          "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+          "headers": {
+            "xi-csrf-token": "QSlbm73V5brH0eLxy6MAMKpR",
+            "x-request-id": "1767435373105",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjU1NTIsImlhdCI6MTc2NzQzMzU1MiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.E_glLDhogvj7qEbHP3-QHEHKIBN5Nz54305jpwHb_48",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "referer": "https://www.biji.com/",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json"
+          },
+          "body": null,
+          "resourceType": "xhr"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/yoda/web/v1/chats/startup_shortcuts",
+      "fullUrl": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+      "requests": [
+        {
+          "id": 2,
+          "time": "2026-01-03T10:16:13.199Z",
+          "method": "POST",
+          "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+          "headers": {
+            "xi-csrf-token": "QSlbm73V5brH0eLxy6MAMKpR",
+            "x-request-id": "1767435373105",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjU1NTIsImlhdCI6MTc2NzQzMzU1MiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.E_glLDhogvj7qEbHP3-QHEHKIBN5Nz54305jpwHb_48",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "referer": "https://www.biji.com/",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json"
+          },
+          "body": "{}",
+          "resourceType": "xhr"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/yoda/web/v1/chats/startup_questions",
+      "fullUrl": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+      "requests": [
+        {
+          "id": 3,
+          "time": "2026-01-03T10:16:13.199Z",
+          "method": "POST",
+          "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+          "headers": {
+            "xi-csrf-token": "QSlbm73V5brH0eLxy6MAMKpR",
+            "x-request-id": "1767435373105",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjU1NTIsImlhdCI6MTc2NzQzMzU1MiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.E_glLDhogvj7qEbHP3-QHEHKIBN5Nz54305jpwHb_48",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "referer": "https://www.biji.com/",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json"
+          },
+          "body": "{\"notes\":{\"select_all\":true},\"web\":true,\"dedao\":true,\"study\":false,\"topics\":{},\"mode\":\"AUTO\",\"selected_resources\":[]}",
+          "resourceType": "xhr"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/spacex/v1/web/user/info",
+      "fullUrl": "https://notes-api.biji.com/spacex/v1/web/user/info",
+      "requests": [
+        {
+          "id": 4,
+          "time": "2026-01-03T10:16:13.487Z",
+          "method": "GET",
+          "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+          "headers": {
+            "xi-csrf-token": "QSlbm73V5brH0eLxy6MAMKpR",
+            "x-request-id": "1767435373450",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjU1NTIsImlhdCI6MTc2NzQzMzU1MiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.E_glLDhogvj7qEbHP3-QHEHKIBN5Nz54305jpwHb_48",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "referer": "https://www.biji.com/",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "x-team-id": "",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "x-team-id-alias": "",
+            "content-type": "application/json"
+          },
+          "body": null,
+          "resourceType": "xhr"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/spacex/v1/web/team/list",
+      "fullUrl": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0",
+      "requests": [
+        {
+          "id": 5,
+          "time": "2026-01-03T10:16:13.641Z",
+          "method": "GET",
+          "url": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0",
+          "headers": {
+            "xi-csrf-token": "QSlbm73V5brH0eLxy6MAMKpR",
+            "x-request-id": "1767435373680",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjU1NTIsImlhdCI6MTc2NzQzMzU1MiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.E_glLDhogvj7qEbHP3-QHEHKIBN5Nz54305jpwHb_48",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "referer": "https://www.biji.com/",
+            "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "x-team-id": "",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "x-team-id-alias": "",
+            "content-type": "application/json",
+            "x-topic-scope": "TEAMSPACE"
+          },
+          "body": null,
+          "resourceType": "xhr"
+        }
+      ]
+    }
+  ]
+}

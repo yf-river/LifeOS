@@ -1,0 +1,118 @@
+[
+  {
+    "timestamp": "2026-01-03T11:18:21.946Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+    "headers": {
+      "xi-csrf-token": "7Xqn-wxUaP4c5zE-DJeVBteU",
+      "x-request-id": "1767439101920",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMzEwNzYsImlhdCI6MTc2NzQzOTA3NiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.FZ9s2BFmAW8bBToIGpoZyhXK7Ms5aZ2bwe3caTKhU3c",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767439102",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "255",
+        "date": "Sat, 03 Jan 2026 11:18:22 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767439102,\"t\":14,\"apm\":\"eb591d51c652001\"},\"c\":{\"uid\":1840524,\"cellphone\":\"+86176****4026\",\"nickname\":\"Get达人\",\"avatar\":\"https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg\",\"status\":2,\"user_team_info\":null,\"create_time\":1767195847,\"update_time\":1767195847}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767439102,
+        "t": 14,
+        "apm": "eb591d51c652001"
+      },
+      "c": {
+        "uid": 1840524,
+        "cellphone": "+86176****4026",
+        "nickname": "Get达人",
+        "avatar": "https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg",
+        "status": 2,
+        "user_team_info": null,
+        "create_time": 1767195847,
+        "update_time": 1767195847
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T11:18:24.298Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+    "headers": {
+      "xi-csrf-token": "7Xqn-wxUaP4c5zE-DJeVBteU",
+      "x-request-id": "1767439104260",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMzEwNzYsImlhdCI6MTc2NzQzOTA3NiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.FZ9s2BFmAW8bBToIGpoZyhXK7Ms5aZ2bwe3caTKhU3c",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767439104",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "255",
+        "date": "Sat, 03 Jan 2026 11:18:24 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767439104,\"t\":5,\"apm\":\"eb591d765ad1002\"},\"c\":{\"uid\":1840524,\"cellphone\":\"+86176****4026\",\"nickname\":\"Get达人\",\"avatar\":\"https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg\",\"status\":2,\"user_team_info\":null,\"create_time\":1767195847,\"update_time\":1767195847}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767439104,
+        "t": 5,
+        "apm": "eb591d765ad1002"
+      },
+      "c": {
+        "uid": 1840524,
+        "cellphone": "+86176****4026",
+        "nickname": "Get达人",
+        "avatar": "https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg",
+        "status": 2,
+        "user_team_info": null,
+        "create_time": 1767195847,
+        "update_time": 1767195847
+      }
+    }
+  }
+]

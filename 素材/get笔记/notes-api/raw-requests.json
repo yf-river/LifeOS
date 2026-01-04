@@ -1,0 +1,47 @@
+{
+  "total": 6,
+  "requests": [
+    {
+      "id": 0,
+      "time": "2026-01-03T10:16:12.317Z",
+      "method": "GET",
+      "url": "https://www.biji.com/note",
+      "resourceType": "document"
+    },
+    {
+      "id": 1,
+      "time": "2026-01-03T10:16:13.198Z",
+      "method": "GET",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+      "resourceType": "xhr"
+    },
+    {
+      "id": 2,
+      "time": "2026-01-03T10:16:13.199Z",
+      "method": "POST",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+      "resourceType": "xhr"
+    },
+    {
+      "id": 3,
+      "time": "2026-01-03T10:16:13.199Z",
+      "method": "POST",
+      "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+      "resourceType": "xhr"
+    },
+    {
+      "id": 4,
+      "time": "2026-01-03T10:16:13.487Z",
+      "method": "GET",
+      "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+      "resourceType": "xhr"
+    },
+    {
+      "id": 5,
+      "time": "2026-01-03T10:16:13.641Z",
+      "method": "GET",
+      "url": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0",
+      "resourceType": "xhr"
+    }
+  ]
+}

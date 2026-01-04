@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Prism Next API
+  version: 1.0.0
+  description: Prism Next 的 API - AI 原生生活操作系统
+paths:
+  /notes:
+    get:
+      summary: 列出笔记 (时间轴)
+      parameters:
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 笔记列表
+    post:
+      summary: 创建笔记
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                source_type:
+                  type: string
+                  enum: [manual, voice, link]
+      responses:
+        '201':
+          description: 笔记创建成功
+
+  /notes/sync:
+    post:
+      summary: 同步离线更改
+      description: 接收来自客户端 SQLite 的批量更改
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  operation:
+                    type: string
+                  payload:
+                    type: object
+      responses:
+        '200':
+          description: 同步成功
+
+  /location:
+    post:
+      summary: 摄取位置轨迹
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  lat:
+                    type: number
+                  lon:
+                    type: number
+                  timestamp:
+                    type: string
+      responses:
+        '202':
+          description: 已接受处理
+
+  /ai/chat:
+    post:
+      summary: 与 Prism 聊天 (RAG)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '200':
+          description: 流式响应

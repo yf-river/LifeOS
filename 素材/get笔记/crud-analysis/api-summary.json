@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-01-03T09:42:08.663Z",
+  "totalRequests": 26,
+  "byCategory": {
+    "create": {
+      "count": 0,
+      "endpoints": []
+    },
+    "read": {
+      "count": 0,
+      "endpoints": []
+    },
+    "update": {
+      "count": 0,
+      "endpoints": []
+    },
+    "delete": {
+      "count": 0,
+      "endpoints": []
+    },
+    "upload": {
+      "count": 26,
+      "endpoints": [
+        "GET /fe-oss/default/openinstall-qcubcl.js",
+        "GET /fe-oss/default/MTczNTI5MDk5NTgy.png",
+        "GET /fe-oss/default/MTczNTI4MzEyNjI5.png",
+        "GET /fe-oss/default/MTczNTI4MTE2NTA1.png",
+        "GET /fe-oss/default/MTczNTI4NjIxNDUx.png",
+        "GET /fe-oss/default/MTczNTI4NTc0Mjg5.jpeg",
+        "GET /fe-oss/default/MTczNTI4NzY3MzY5.png",
+        "GET /fe-oss/default/MTczNTI4ODAzODQ1.png",
+        "GET /fe-oss/default/MTczNTI4ODExNTcy.png",
+        "GET /fe-oss/default/MTczNTI5Nzk4Njcw.png",
+        "GET /fe-oss/default/MTczMzQ2NjM1NjM3.png",
+        "GET /fe-oss/default/MTc2MDAwNDYwNjU1.jpeg",
+        "GET /fe-oss/default/MTczNTI5MzE3Mzgy.png"
+      ]
+    },
+    "ai": {
+      "count": 0,
+      "endpoints": []
+    },
+    "other": {
+      "count": 0,
+      "endpoints": []
+    }
+  }
+}

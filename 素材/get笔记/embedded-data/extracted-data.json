@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "extractionTime": "2026-01-03T10:12:58.460Z",
+    "url": "https://www.biji.com/note",
+    "totalScripts": 8
+  },
+  "scripts": [
+    {
+      "index": 0,
+      "length": 30,
+      "content": " window.__INITIAL_STATE__= {};",
+      "variables": {
+        "__INITIAL_STATE__": {}
+      },
+      "json": {}
+    }
+  ],
+  "pageVariables": {
+    "__INITIAL_STATE__": {}
+  }
+}

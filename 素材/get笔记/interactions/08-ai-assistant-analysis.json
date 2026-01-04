@@ -1,0 +1,10 @@
+{
+  "greeting": "你好，我是你的AI助手自动模式Get日报帮我生成周报整理一周待办24小时热点多维度深度调研寻找解决方案搜索金句/观点你好，我是你的AI助手 你可以这样问我 帮我生成周报整理一周待办24小时热点多维度深度调研寻找解决方案搜索金句/观点自动模式 AI助手",
+  "suggestedPrompts": [],
+  "inputPlaceholder": "基于选定范围提问",
+  "hasVoiceInput": true,
+  "hasFileUpload": false,
+  "availableModels": [
+    "AI助手"
+  ]
+}

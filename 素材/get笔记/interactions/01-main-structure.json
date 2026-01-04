@@ -1,0 +1,74 @@
+{
+  "omnibar": {
+    "selector": ".aie-content",
+    "placeholder": "",
+    "tagName": "DIV",
+    "className": "tiptap ProseMirror aie-content"
+  },
+  "quickActions": [],
+  "toolbar": [],
+  "noteList": [],
+  "sidebar": [
+    {
+      "text": "首页",
+      "className": "menu-item selected",
+      "isActive": true
+    },
+    {
+      "text": "首页",
+      "className": "menu-item-label",
+      "isActive": false
+    },
+    {
+      "text": "AI助手",
+      "className": "menu-item",
+      "isActive": false
+    },
+    {
+      "text": "AI助手",
+      "className": "menu-item-label",
+      "isActive": false
+    },
+    {
+      "text": "知识库",
+      "className": "menu-item",
+      "isActive": false
+    },
+    {
+      "text": "知识库",
+      "className": "menu-item-label",
+      "isActive": false
+    },
+    {
+      "text": "标签",
+      "className": "menu-item",
+      "isActive": false
+    },
+    {
+      "text": "标签",
+      "className": "menu-item-label",
+      "isActive": false
+    },
+    {
+      "text": "小程序",
+      "className": "menu-item",
+      "isActive": false
+    },
+    {
+      "text": "小程序",
+      "className": "menu-item-label",
+      "isActive": false
+    },
+    {
+      "text": "下载App",
+      "className": "menu-item",
+      "isActive": false
+    },
+    {
+      "text": "下载App",
+      "className": "menu-item-label",
+      "isActive": false
+    }
+  ],
+  "aiAssistant": null
+}

@@ -1,0 +1,33 @@
+{
+  "found": true,
+  "type": "tiptap/prosemirror",
+  "toolbar": [],
+  "shortcuts": [],
+  "blockTypes": [],
+  "config": {},
+  "editorElement": {
+    "className": "tiptap ProseMirror aie-content",
+    "attributes": [
+      {
+        "name": "contenteditable",
+        "value": "false"
+      },
+      {
+        "name": "role",
+        "value": "textbox"
+      },
+      {
+        "name": "translate",
+        "value": "no"
+      },
+      {
+        "name": "class",
+        "value": "tiptap ProseMirror aie-content"
+      },
+      {
+        "name": "style",
+        "value": "height: calc(100% - 20px);"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[
+  "GET /spacex/v1/web/team/list",
+  "GET /spacex/v1/web/user/info",
+  "GET /yoda/web/v1/chats/entry",
+  "GET /yoda/web/v1/chats/question_resource/config",
+  "POST /yoda/web/v1/chats",
+  "POST /yoda/web/v1/chats/startup_questions",
+  "POST /yoda/web/v1/chats/startup_shortcuts",
+  "POST /yoda/web/v1/chats/stream"
+]

@@ -1,0 +1,1215 @@
+[
+  {
+    "timestamp": "2026-01-03T09:18:29.092Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v2/getconf?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=&id=4edec955fa3c4a5a9819d2947ef36438&ipv6=false&runEnv=10&iv=5&loadVersion=2.5.3&lang=zh-CN&callback=__JSONP_i60r9tc_0",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:29 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_i60r9tc_0({\"data\":{\"dt\":\"5NphENwTV/pFFhVBRRKTz5EKHHzYu57c\",\"ac\":{\"enable\":1,\"bid\":\"4edec955fa3c4a5a9819d2947ef36438\",\"pn\":\"YD00706144414210\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528ab69db8ea65bcaeaf9ad05b9c94a3a3c434898987d2b25ef4b2a983bb2af0feacc3b92ae2f4ee95a132e29aa3b1cd72abae8cd1d44eb0b7bb82f55bb08fa3afd437fffeb3\"},\"imageServer\":[\"necaptcha.nosdn.127.net\",\"necaptcha-nosdn.126.net\"],\"zoneId\":\"CN31\",\"resources\":[\"/2.28.5/core-optimi.m25b40.v2.28.5.min.js\"],\"ir\":{\"enable\":1,\"apiServer\":[\"ir-sdk.dun.163.com\",\"ir-sdk.dun.163yun.com\"],\"pn\":\"YD00192283058223\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528\"},\"apiServer\":[\"c.dun.163.com\",\"c.dun.163yun.com\"],\"theme\":\"light\",\"audio\":true,\"customStyles\":true,\"smart\":false,\"staticServers\":[\"cstaticdun.126.net\",\"cstaticdun1.126.net\"]},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:32.412Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v2/getconf?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&id=4edec955fa3c4a5a9819d2947ef36438&ipv6=false&runEnv=10&iv=5&loadVersion=2.5.3&lang=zh-CN&callback=__JSONP_2v9qi8o_1",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:32 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_2v9qi8o_1({\"data\":{\"dt\":\"5NphENwTV/pFFhVBRRKTz5EKHHzYu57c\",\"ac\":{\"enable\":1,\"bid\":\"4edec955fa3c4a5a9819d2947ef36438\",\"pn\":\"YD00706144414210\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528ab69db8ea65bcaeaf9ad05b9c94a3a3c434898987d2b25ef4b2a983bb2af0feacc3b92ae2f4ee95a132e29aa3b1cd72abae8cd1d44eb0b7bb82f55bb08fa3afd437fffeb3\"},\"imageServer\":[\"necaptcha.nosdn.127.net\",\"necaptcha-nosdn.126.net\"],\"zoneId\":\"CN31\",\"resources\":[\"/2.28.5/core-optimi.m25b40.v2.28.5.min.js\"],\"ir\":{\"enable\":1,\"apiServer\":[\"ir-sdk.dun.163.com\",\"ir-sdk.dun.163yun.com\"],\"pn\":\"YD00192283058223\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528\"},\"apiServer\":[\"c.dun.163.com\",\"c.dun.163yun.com\"],\"theme\":\"light\",\"audio\":true,\"customStyles\":true,\"smart\":false,\"staticServers\":[\"cstaticdun.126.net\",\"cstaticdun1.126.net\"]},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:35.401Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v2/collect?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&id=4edec955fa3c4a5a9819d2947ef36438&token=&type=script&target=https%3A%2F%2Fcstaticdun.126.net%2F2.28.5%2Fcore-optimi.m25b40.v2.28.5.min.js&message=CaptchaError%3A%20502(request%20script%20error)%20-%20Timeout%3A%20failed%20to%20request%20script(https%3A%2F%2Fcstaticdun.126.net%2F2.28.5%2Fcore-optimi.m25b40.v2.28.5.min.js).%0A%20%20%20%20at%20https%3A%2F%2Fcstaticdun.126.net%2Fload.min.js%3Fv%3D1767431908988%3A1%3A13371%0A%20%20%20%20at%20r%20(https%3A%2F%2Fcstaticdun.126.net%2Fload.min.js%3Fv%3D1767431908988%3A1%3A10532)%0A%20%20%20%20at%20https%3A%2F%2Fcstaticdun.126.net%2Fload.min.js%3Fv%3D1767431908988%3A1%3A11023%0A%20%20%20%20at%20https%3A%2F%2Fcstaticdun.126.net%2Fload.min.js%3Fv%3D1767431908988%3A1%3A12393%0A%20%20%20%20at%20Array.map%20(%3Canonymous%3E)%0A%20%20%20%20at%20https%3A%2F%2Fcstaticdun.126.net%2Fload.min.js%3Fv%3D1767431908988%3A1%3A12370&times=1&ip=120.204.126.219&dns=211.136.115.158&callback=__JSONP_dg0e1yk_2",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "date": "Sat, 03 Jan 2026 09:18:35 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_dg0e1yk_2({\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:35.732Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&irToken=gDrXrAYU4%2BNFZhQAQRfCi4AKXSiw1ev0&id=4edec955fa3c4a5a9819d2947ef36438&fp=PNyi47V8cb5pREQcJxRjE16rh3vV517wofzRIqulyK%2FZjA4%5CzPV1E%2FbzaEBKJ7gjpcnnsc7YLLdhe6kb%5CsNrldmkzW0cmbb2uHdzRTBEWkk3yvKpL48jLWaXWC%2BLuEeYZ%2BuCkuuGJzxxJ8BALw3qLYwQ8bkyu4a4OmXdfINLhjRx%5CVuG%3A1767432815468&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=8R3zun%2BnotllOuanUZiKRUylg1cZAg.ScAaDcZyNTfqMg8NelJ5%2B1q5Ek92JgAMmx3P5hGQCSyUczbJWZo3mWVb%2FgmE7&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=&callback=__JSONP_8ebt1hp_0",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:35 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_8ebt1hp_0({\"data\":{\"bg\":[\"https://necaptcha.nosdn.127.net/2a9b3724048f423d9ce8abf41e931c4c.jpg\",\"https://necaptcha-nosdn.126.net/2a9b3724048f423d9ce8abf41e931c4c.jpg\"],\"front\":[\"https://necaptcha.nosdn.127.net/46eac90d567a42e4a492d84b332510e3.png\",\"https://necaptcha-nosdn.126.net/46eac90d567a42e4a492d84b332510e3.png\"],\"token\":\"15566d7879594d8d80574117d886d231\",\"type\":2,\"waitTime\":300,\"zoneId\":\"CN31\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:35.732Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&irToken=cwRJvNF6CDFFN1VRUReHnoBaHC2h0a7z&id=4edec955fa3c4a5a9819d2947ef36438&fp=PNyi47V8cb5pREQcJxRjE16rh3vV517wofzRIqulyK%2FZjA4%5CzPV1E%2FbzaEBKJ7gjpcnnsc7YLLdhe6kb%5CsNrldmkzW0cmbb2uHdzRTBEWkk3yvKpL48jLWaXWC%2BLuEeYZ%2BuCkuuGJzxxJ8BALw3qLYwQ8bkyu4a4OmXdfINLhjRx%5CVuG%3A1767432815468&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=lVytk39Tor4WC1dnj85ziv2OgmQGDNGKQGmhCwQD8CryTKB2ghEaCct1BteaApYFk%2B0j%2FjvlJkqt9XuQNdf4y0aWr8X7&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=&callback=__JSONP_9kzi1pu_1",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:35 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_9kzi1pu_1({\"data\":{\"bg\":[\"https://necaptcha.nosdn.127.net/260d4ed3e97d418d95c3ef27e1b681a8.jpg\",\"https://necaptcha-nosdn.126.net/260d4ed3e97d418d95c3ef27e1b681a8.jpg\"],\"front\":[\"https://necaptcha.nosdn.127.net/27231b8901724bfbabef2567e5c87cb4.png\",\"https://necaptcha-nosdn.126.net/27231b8901724bfbabef2567e5c87cb4.png\"],\"token\":\"05e6a76169254530b9bd3703f3638d50\",\"type\":2,\"waitTime\":300,\"zoneId\":\"CN31\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:37.369Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/check?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&id=4edec955fa3c4a5a9819d2947ef36438&token=15566d7879594d8d80574117d886d231&data=%7B%22d%22%3A%22.f%2FxNJ424AZ1qkC3%2B.Kf4JpeZLKimqsfySPfsm1T%2Fzk2938OKqk%2BrvXhaBpEVk%2FYLz0F.LiONwSovmX19KqjiQ8Gdf61U5BYYzmRGJ5gl1Nu6%2FaHPhbWtmZ%2FPjTXaaq5gOLWr%2B4bcfVLym5bXjxUrAKaHBfp%2FBz5c1fOVSXxT6X9pf.aKZQR%2FOWIfUMkMAZQOzmfeJ3ajGlE5Z0beKVtCx%2FXjNb0EKiG3P0yMZLkf%2FTgfPTDfUAz00B4JSu3aDjrJGMw%2BV4sqRZnw86j2%2BnPn%2Bmf5.LOlfk6%2FpdomhS.qNvF.R3uM9I.ccKmTSWXKdqW9AY8KE%2BOY9ZU3kqv9%2F5c2APDUsmimcoV59OdWUyx6%2FsOZvErNcQX4kD0zjArYAkVVHuqwPYD6vAq0P0qiYg1N0U4oFLanNDzHxhzXQQiYrQVWk5V.%2B%2BonM5VNJgFxAKNGKRFnROVq0Us99MKRL9UhD6clxgz%2BsWQdq8lba5lAyTviir4wTwmiKn4ZQcvGkH9mkjdrWq3gr0%2B%2BMwQz9u.KUcU3HThCatJ%2BGnlQU.nVbGOCReVTg3zxSznxM%2BLAA3XhsmZJRBOl6DG8YVULCd1ACL4TQ%2B6SSFFSVJaaxYB5j6hfIOsUAKCK9agzrX0jRNTn4X9Y%2FStHVMLo%2FqQO535nIdgYyH03JbkhGMJvzpNQgzRxTwBlnIbdc%2BGNqLJqsmwZz%2BDvJeaozEceuM.xkqSR6IOV%2BIDvacqblJ5v%2BXVjRuSQwU.QeQ39K52%2BdGGVkPopzH8fEbohOIoTZ8kumnJdfwLj.0sK5TOQo0ZXY2QHjnUxcMKXR%2BdzygFe%2FjfMr1TL2vkiLlDFR83yTHKr.NRT2AXQTY7%22%2C%22m%22%3A%22%22%2C%22p%22%3A%22xVyAHK001Y.l1BSPmyQPebFDIzdKuF9CI0SvfeWcQQi.Z9RZJF3pRYYgLW0nApMZhh0Qtfxl%2Bd2P9ObB02USIXhWDux7%22%2C%22f%22%3A%22iPldvSuuEyLGMbwN%2BgoxVkqqEk1ZNYeMQCHonfVZuGf1OHx%2B5y6Uo1MIn1%2FvDUyl2zEhOMnBEqDO4yNAGpf8ZG943W9rqk1DnRVCfw1jndlgjHgNjyL9AYprzXToi3mRRMihuDJRXQY%2Fz9iXlMVTJGTw3u9CMyG%2BDQMRp5PGulXCLotAQb%2FsPXXVe3rI0sw6NI%2BjQkXXAhezipAYQcEotKL3Zfex5G%2BKGFUjg.M2RCsEHkJ2zRWlwyl6eelQ9OFuyNZ4ZMoVTtrajCPfg31i0JhkZEgcdx8Czs.6mOijyV1ZSUz9IxtoVbQrUKuVb8VQKI9st5Iso%2F0U%2BDHn3GXw4z9yexXHY5ZCLiQtCV15QTQNeIJslICsd4NSuP.DcHK00w8GzAffgHuFdMFlcZEQ%2BUA%2FiT48peMfk9FRuXIgBxEei0TS%22%2C%22ext%22%3A%22%2FEv%2Fxez64zbeoC8.KghMziQd.mpPuir4o2qNi0Bc.hwXZgbnbJDOQoXgxGkXACeuc%2BVKY%2FYlVvkG9TRiWdHfrjaWYsQ7%22%7D&width=250&type=2&version=2.28.5&cb=3D5aWL24KxvjldaOEjpzVuwhTkzZ8CCLVbj9lhEjcOLzBeTBniwPi%2BIXKvRKsGErAyBaTuTuyuUhkiW31vsjdYSy2rE7&user=&extraData=&bf=5001&runEnv=10&sdkVersion=&loadVersion=2.5.3&iv=4&callback=__JSONP_bqb4hn7_2",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "date": "Sat, 03 Jan 2026 09:18:37 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_bqb4hn7_2({\"data\":{\"result\":false,\"zoneId\":\"CN31\",\"token\":\"15566d7879594d8d80574117d886d231\",\"validate\":\"\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:37.780Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&irToken=PQMEfxBq8rZFdwQUAFPWjoAbTTm2RKvp&id=4edec955fa3c4a5a9819d2947ef36438&fp=PNyi47V8cb5pREQcJxRjE16rh3vV517wofzRIqulyK%2FZjA4%5CzPV1E%2FbzaEBKJ7gjpcnnsc7YLLdhe6kb%5CsNrldmkzW0cmbb2uHdzRTBEWkk3yvKpL48jLWaXWC%2BLuEeYZ%2BuCkuuGJzxxJ8BALw3qLYwQ8bkyu4a4OmXdfINLhjRx%5CVuG%3A1767432815468&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=LcFpzsh6ci0I6Qv2Nku.8i5AkzopTunmduIevugyOL2hQ5849pxZyPlofkchEinZJ5EhHJusNknOX2fR3Y6d452ECxQ7&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=15566d7879594d8d80574117d886d231&callback=__JSONP_i5et9mc_3",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:37 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_i5et9mc_3({\"data\":{\"bg\":[\"https://necaptcha.nosdn.127.net/ce4649cadd0c45088ef3fc9357a9296d.jpg\",\"https://necaptcha-nosdn.126.net/ce4649cadd0c45088ef3fc9357a9296d.jpg\"],\"front\":[\"https://necaptcha.nosdn.127.net/159eee31452d477a8d54f194d1eb3ec8.png\",\"https://necaptcha-nosdn.126.net/159eee31452d477a8d54f194d1eb3ec8.png\"],\"token\":\"12e5db01dd6641b8a055207cbb9bc21b\",\"type\":2,\"waitTime\":300,\"zoneId\":\"CN31\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:49.009Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v2/getconf?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&id=4edec955fa3c4a5a9819d2947ef36438&ipv6=false&runEnv=10&iv=5&loadVersion=2.5.3&lang=zh-CN&callback=__JSONP_6cv44zc_3",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:49 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_6cv44zc_3({\"data\":{\"dt\":\"5NphENwTV/pFFhVBRRKTz5EKHHzYu57c\",\"ac\":{\"enable\":1,\"bid\":\"4edec955fa3c4a5a9819d2947ef36438\",\"pn\":\"YD00706144414210\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528ab69db8ea65bcaeaf9ad05b9c94a3a3c434898987d2b25ef4b2a983bb2af0feacc3b92ae2f4ee95a132e29aa3b1cd72abae8cd1d44eb0b7bb82f55bb08fa3afd437fffeb3\"},\"imageServer\":[\"necaptcha.nosdn.127.net\",\"necaptcha-nosdn.126.net\"],\"zoneId\":\"CN31\",\"resources\":[\"/2.28.5/core-optimi.m25b40.v2.28.5.min.js\"],\"ir\":{\"enable\":1,\"apiServer\":[\"ir-sdk.dun.163.com\",\"ir-sdk.dun.163yun.com\"],\"pn\":\"YD00192283058223\",\"token\":\"9ca17ae2e6fecda16ae2e6eeb5cb528\"},\"apiServer\":[\"c.dun.163.com\",\"c.dun.163yun.com\"],\"theme\":\"light\",\"audio\":true,\"customStyles\":true,\"smart\":false,\"staticServers\":[\"cstaticdun.126.net\",\"cstaticdun1.126.net\"]},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:49.509Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/get?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&irToken=YAT%2Fyp0Psz5AcgQRQAbHzoRaGTz%2B7KT0&id=4edec955fa3c4a5a9819d2947ef36438&fp=PNyi47V8cb5pREQcJxRjE16rh3vV517wofzRIqulyK%2FZjA4%5CzPV1E%2FbzaEBKJ7gjpcnnsc7YLLdhe6kb%5CsNrldmkzW0cmbb2uHdzRTBEWkk3yvKpL48jLWaXWC%2BLuEeYZ%2BuCkuuGJzxxJ8BALw3qLYwQ8bkyu4a4OmXdfINLhjRx%5CVuG%3A1767432815468&https=true&type=&version=2.28.5&dpr=1&dev=1&cb=xcjW5E5OHaPawNHZ11TiOPz%2BbKVM%2BozutufXuyYp9nwXdb%2FjuS%2B2vckOp%2F%2FnOvPChI4n58%2FClDdPhsDr0T9NGgwSzn87&ipv6=false&runEnv=10&group=&scene=&lang=zh-CN&sdkVersion=&loadVersion=2.5.3&iv=4&user=&width=250&audio=false&sizeType=10&smsVersion=v3&token=&callback=__JSONP_gbmw0va_4",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "p3p": "CP=\"CAO PSA OUR\"",
+        "date": "Sat, 03 Jan 2026 09:18:49 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_gbmw0va_4({\"data\":{\"bg\":[\"https://necaptcha.nosdn.127.net/7f8599dc25914dbfab49c20fb25f6e39.jpg\",\"https://necaptcha-nosdn.126.net/7f8599dc25914dbfab49c20fb25f6e39.jpg\"],\"front\":[\"https://necaptcha.nosdn.127.net/2933a41c5183479f83b0badacfd061c7.png\",\"https://necaptcha-nosdn.126.net/2933a41c5183479f83b0badacfd061c7.png\"],\"token\":\"e30fc8e63bee4ab89410458a1ddd4e62\",\"type\":2,\"waitTime\":300,\"zoneId\":\"CN31\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:51.274Z",
+    "method": "GET",
+    "url": "https://c.dun.163.com/api/v3/check?referer=https%3A%2F%2Fwww.biji.com%2F&zoneId=CN31&dt=5NphENwTV%2FpFFhVBRRKTz5EKHHzYu57c&id=4edec955fa3c4a5a9819d2947ef36438&token=e30fc8e63bee4ab89410458a1ddd4e62&data=%7B%22d%22%3A%226AyHQYPVP%2B3mFFjcWuBOiyhkK0cLePJws6eblH1x9yoMdf%2BRP9kOSErL5ePKtewFsfriFRQ4V3i5LfvSGVSyXfxGyMkh4Xpm3UvjbPVy9O.5mB9AkRog6YIkVn%2F%2FtY.YKOcE0JOfROY5G.hG3ovdLyRbNu4mcHCTq%2FxTC8WLs9.pDFO%2Fj%2BbTQIcLqHZ4Hat4bnZxRF5UFos%2FwUWlxWrHWCxeUy9s3yaR2KgbgAJn0BHIc6RN.oY0YIAMA65%2BfGKZc%2FYugODvAs8XRz1pos6Su6HMZYM8O%2Bv9bYq51JFLHoZFaPPGV8cT35Xq6Id6qV%2B0xs9hw1iZxuPyH5Mx5MhotVnAIwEybpjGpsHe3sbQ2JzCnYzlIVqxB6%2FMFiRJS0i9CwWYRjp%2FOy%2Fcd%2BOg1fJSP5ir2e48DQacoBgtd3OmS%2BbgjyCQz1PxZRY2b0QHiChduuwMP%2Bguw4kDpMPB22fHfZi58dC4TOnXgzkFSCW.SLzrYUBmwkyHBkIiVJXOQd4afPaNJlnzwrHUglB5ofWbfwA0sHPG.5URZdkwSHnZfyP2MphbJNuK.T.jggFdd5wuoBhrvt1KCHrE2T3oBvcC13tPMnEt%2F16absdogQe4Dfc8FwUPQ1ukTBtWw1YFEJuUY0IqIDihyp0Fx%2Bk2hILLX2LhICKPyU0KjvpVCXAvm3gOeHXlke%2BekIBPX2RXzyCUQfCZalD4QFJ3VQCNvPARVcHUQBpcouI0SDGdCOwW89zAhGQQbq%2Fw2qwkQK6Z.MZSzLC0qA%2BYxTLo6QTMVZ6V%2B53%2FtVUt%2F.D9kyURlruNCqhNnbXKzp8MiJ85cGIVs8uH3dZfDchVFNG4Xa6SCVs4xVhoXrL.LnqWR0B5bHRzzxlnXMPVovXZvmm9JwBme6%2FnWmFH8W5IAF3STunQVMbuuuEUNUao8TZ6ZcHKRSmf6xHU046mytLx%2FwIkBr3njfzGqXWcpyIk3wEt8f54DQtACH4UCbAIPYOH28vjWYX8%2BzZiMlo3XPXGs0FQe3Wl1WNX3to%2BheDZfPXWt.1a2fEDw%2FENoaQYpv2BFUgtR8ZyaaSDEZryo5hYcy8%2Fx8hySqVp9vVKTzCVZGS9tMxYP6XJ1XUS09q7%22%2C%22m%22%3A%22%22%2C%22p%22%3A%226rJnGg%2BTAudtZxYE3fnOBc.ICGn5N0grsOEK%2BAcnx%2FUozcbOBSbslJJ0a%2BCmnVjb2UIN0LcQkXzX8%2BjD2nV8hBB2fK97%22%2C%22f%22%3A%22Pr9HywkR%2BqvxHBufUhT9NALgQMjqA0x9GWFknjUZ44VUg22yQmXDF4I26yMRZ4REhvNYbVskZzrzEY5raVYfIo02RZSi%2F50xzJbphBSqf2sj0PCCY4KLw2tDKWJHzSxfgMhsuyxWaP%2Bo%2BTBs3T6BAanCVhNh1xOtVwSEEznosvTq%2FXuH1zubQL5C96.whmZ9qqP3smUb%2FrOjqB%2BsKF%2BtnF8zXdJeUfpbiT6qifeQcW1FyED8haxpx9vJ%2B9gY8Im.dvmcsLP68ovDrtB0HjosI6NRnRx.1pQZ.2T6VEi1Fi%2BrMdBGagfRjqw5cnBDVuZtvTDGwGDQEJeDiHeD.3VDbOSDdPO4vvrY.4NIcbg8BIqC4%2BfKeYqfjxph8TqsmraWiQJyaSmOfSbysWiRvvG4dPDSbaDZC2Ccd8G6RzrmSPY1hbgnAULEoWHNvISwq2rNEaV1F4dX1MrLjl%2Fuf5VssnwSKPif%2BYDNbz%2FjQGGQUPMoeSJxZh2fBzKSwjvpGdnBpwEVbg77%22%2C%22ext%22%3A%22itk1.VUWkMXDu9Fs4tDO33Sn.eimJzkW0xvRRIQIdykWmTILHaLZu40swlCNYIsjr3WbKD2UeiDPFmgu9USlnn3uesg7%22%7D&width=250&type=2&version=2.28.5&cb=mjJbifSU2ae9zDvk6PWoaoaSrLb2jlsVcOoG0g8918zGtniDXpiHPOmkdm0pTCftlcCuYd.Q9swtlDSPL0v%2FDASk5j87&user=&extraData=&bf=5001&runEnv=10&sdkVersion=&loadVersion=2.5.3&iv=4&callback=__JSONP_ui1fgor_5",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "postData": null,
+    "resourceType": "script",
+    "response": {
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store",
+        "timing-allow-origin": "*",
+        "content-encoding": "gzip",
+        "x-via": "CN31",
+        "connection": "keep-alive",
+        "date": "Sat, 03 Jan 2026 09:18:51 GMT",
+        "content-type": "application/javascript;charset=utf-8",
+        "vary": "Accept-Encoding",
+        "server": "nginx"
+      },
+      "body": "__JSONP_ui1fgor_5({\"data\":{\"result\":true,\"zoneId\":\"CN31\",\"token\":\"e30fc8e63bee4ab89410458a1ddd4e62\",\"validate\":\"GV/tHBfE3Haypv9wqEF0Vc8K3ZjDD4NVHpQDJmTeV6A5VLwH5LjTjGciEcywADyJSFTn3UNbqOToGQHWTAnubLWTDKWftM1frwZw5BFCzmKuUYpRk2zjEFM76uB2zRwgflqmGABRgbhM7pt0/5V8KzR/CzfbLzXGwfEpce+h260=\"},\"error\":0,\"msg\":\"ok\"});"
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:59.886Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431939870",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431940",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "387",
+        "date": "Sat, 03 Jan 2026 09:19:00 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431940,\"t\":12,\"apm\":\"eb576831b032001\"},\"c\":{\"enable_deep_think_mode\":false,\"enable_auto_agent_mode\":false,\"auto_agent_mode_tip\":\"\",\"max_share_chat_message_count\":0,\"support_file_types\":[\"pdf\",\"docx\",\"doc\",\"xlsx\",\"csv\",\"ppt\",\"pptx\",\"jpg\",\"jpeg\",\"png\",\"gif\",\"webp\",\"tiff\",\"tif\"],\"file_parse_max_wait_ms\":1800000,\"total_resources_max_count\":50,\"topic_files_max_count\":10,\"local_files_max_count\":10,\"images_max_count\":10,\"note_max_count\":20,\"book_topic_max_count\":0,\"chat_file_max_size_byte\":104857600,\"chat_image_max_size_byte\":10485760,\"chat_image_max_width\":10240,\"chat_image_max_height\":10240,\"chat_image_max_pixels\":36000000,\"has_exceeded_daily_file_quota\":false}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431940,
+        "t": 12,
+        "apm": "eb576831b032001"
+      },
+      "c": {
+        "enable_deep_think_mode": false,
+        "enable_auto_agent_mode": false,
+        "auto_agent_mode_tip": "",
+        "max_share_chat_message_count": 0,
+        "support_file_types": [
+          "pdf",
+          "docx",
+          "doc",
+          "xlsx",
+          "csv",
+          "ppt",
+          "pptx",
+          "jpg",
+          "jpeg",
+          "png",
+          "gif",
+          "webp",
+          "tiff",
+          "tif"
+        ],
+        "file_parse_max_wait_ms": 1800000,
+        "total_resources_max_count": 50,
+        "topic_files_max_count": 10,
+        "local_files_max_count": 10,
+        "images_max_count": 10,
+        "note_max_count": 20,
+        "book_topic_max_count": 0,
+        "chat_file_max_size_byte": 104857600,
+        "chat_image_max_size_byte": 10485760,
+        "chat_image_max_width": 10240,
+        "chat_image_max_height": 10240,
+        "chat_image_max_pixels": 36000000,
+        "has_exceeded_daily_file_quota": false
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:59.888Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431939870",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431940",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "237",
+        "date": "Sat, 03 Jan 2026 09:19:00 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431940,\"t\":6,\"apm\":\"eb576833c252002\"},\"c\":{\"shortcuts\":[{\"image\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png\",\"icon\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png\",\"text\":\"Get日报\",\"type\":\"daily_report\",\"has_new\":false}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431940,
+        "t": 6,
+        "apm": "eb576833c252002"
+      },
+      "c": {
+        "shortcuts": [
+          {
+            "image": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png",
+            "icon": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png",
+            "text": "Get日报",
+            "type": "daily_report",
+            "has_new": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:18:59.892Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431939870",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{\"notes\":{\"select_all\":true},\"web\":true,\"dedao\":true,\"study\":false,\"topics\":{},\"mode\":\"AUTO\",\"selected_resources\":[]}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431940",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "715",
+        "date": "Sat, 03 Jan 2026 09:19:00 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431940,\"t\":20,\"apm\":\"eb5768317a53001\"},\"c\":{\"questions\":[{\"question\":\"汇总一周笔记，生成“本周重点工作总结”和“下周计划”\",\"show_question\":\"帮我生成周报\"},{\"question\":\"提取一周笔记里的待办事项，按紧急-重要程度排序\",\"show_question\":\"整理一周待办\"},{\"question\":\"汇总过去 24 小时全球最值得关注的 10 条新闻，并各用 50 字摘要\",\"show_question\":\"24小时热点\"},{\"question\":\"请根据我提供的 [事件/产品/问题] 开展多维度的调研，包含背景、核心优势、争议点及当前现状。\",\"show_question\":\"多维度深度调研\"},{\"question\":\"遇到一个难题，稍后我会发给你，请在全部内容中搜索，有哪些解决方案或思维模型？\",\"show_question\":\"寻找解决方案\"},{\"question\":\"稍后我会发给你一个[主题/关键词]，请搜索得到内容，找出相关的精彩金句或颠覆性观点。\",\"show_question\":\"搜索金句/观点\"}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431940,
+        "t": 20,
+        "apm": "eb5768317a53001"
+      },
+      "c": {
+        "questions": [
+          {
+            "question": "汇总一周笔记，生成“本周重点工作总结”和“下周计划”",
+            "show_question": "帮我生成周报"
+          },
+          {
+            "question": "提取一周笔记里的待办事项，按紧急-重要程度排序",
+            "show_question": "整理一周待办"
+          },
+          {
+            "question": "汇总过去 24 小时全球最值得关注的 10 条新闻，并各用 50 字摘要",
+            "show_question": "24小时热点"
+          },
+          {
+            "question": "请根据我提供的 [事件/产品/问题] 开展多维度的调研，包含背景、核心优势、争议点及当前现状。",
+            "show_question": "多维度深度调研"
+          },
+          {
+            "question": "遇到一个难题，稍后我会发给你，请在全部内容中搜索，有哪些解决方案或思维模型？",
+            "show_question": "寻找解决方案"
+          },
+          {
+            "question": "稍后我会发给你一个[主题/关键词]，请搜索得到内容，找出相关的精彩金句或颠覆性观点。",
+            "show_question": "搜索金句/观点"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:00.105Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431940145",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431940",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "257",
+        "date": "Sat, 03 Jan 2026 09:19:00 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431940,\"t\":15,\"apm\":\"eb576832d83f002\"},\"c\":{\"uid\":1840524,\"cellphone\":\"+86176****4026\",\"nickname\":\"Get达人\",\"avatar\":\"https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg\",\"status\":2,\"user_team_info\":null,\"create_time\":1767195847,\"update_time\":1767195847}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431940,
+        "t": 15,
+        "apm": "eb576832d83f002"
+      },
+      "c": {
+        "uid": 1840524,
+        "cellphone": "+86176****4026",
+        "nickname": "Get达人",
+        "avatar": "https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg",
+        "status": 2,
+        "user_team_info": null,
+        "create_time": 1767195847,
+        "update_time": 1767195847
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:00.253Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431940260",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json",
+      "x-topic-scope": "TEAMSPACE"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431940",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "111",
+        "date": "Sat, 03 Jan 2026 09:19:00 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431940,\"t\":4,\"apm\":\"eb576835de53003\"},\"c\":{\"total\":0,\"list\":[]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431940,
+        "t": 4,
+        "apm": "eb576835de53003"
+      },
+      "c": {
+        "total": 0,
+        "list": []
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:02.701Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431942650",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431942",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "375",
+        "date": "Sat, 03 Jan 2026 09:19:02 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431942,\"t\":7,\"apm\":\"eb57685c7653001\"},\"c\":{\"enable_deep_think_mode\":false,\"enable_auto_agent_mode\":false,\"auto_agent_mode_tip\":\"\",\"max_share_chat_message_count\":0,\"support_file_types\":[\"pdf\",\"docx\",\"doc\",\"xlsx\",\"csv\",\"ppt\",\"pptx\",\"jpg\",\"jpeg\",\"png\",\"gif\",\"webp\",\"tiff\",\"tif\"],\"file_parse_max_wait_ms\":1800000,\"total_resources_max_count\":50,\"topic_files_max_count\":10,\"local_files_max_count\":10,\"images_max_count\":10,\"note_max_count\":20,\"book_topic_max_count\":0,\"chat_file_max_size_byte\":104857600,\"chat_image_max_size_byte\":10485760,\"chat_image_max_width\":10240,\"chat_image_max_height\":10240,\"chat_image_max_pixels\":36000000,\"has_exceeded_daily_file_quota\":false}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431942,
+        "t": 7,
+        "apm": "eb57685c7653001"
+      },
+      "c": {
+        "enable_deep_think_mode": false,
+        "enable_auto_agent_mode": false,
+        "auto_agent_mode_tip": "",
+        "max_share_chat_message_count": 0,
+        "support_file_types": [
+          "pdf",
+          "docx",
+          "doc",
+          "xlsx",
+          "csv",
+          "ppt",
+          "pptx",
+          "jpg",
+          "jpeg",
+          "png",
+          "gif",
+          "webp",
+          "tiff",
+          "tif"
+        ],
+        "file_parse_max_wait_ms": 1800000,
+        "total_resources_max_count": 50,
+        "topic_files_max_count": 10,
+        "local_files_max_count": 10,
+        "images_max_count": 10,
+        "note_max_count": 20,
+        "book_topic_max_count": 0,
+        "chat_file_max_size_byte": 104857600,
+        "chat_image_max_size_byte": 10485760,
+        "chat_image_max_width": 10240,
+        "chat_image_max_height": 10240,
+        "chat_image_max_pixels": 36000000,
+        "has_exceeded_daily_file_quota": false
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:02.702Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/entry?upstream=US_NOTE&id=1897763825525545792",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431942650",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431942",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "128",
+        "date": "Sat, 03 Jan 2026 09:19:02 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":20103,\"e\":\"无法找到此会话\",\"s\":1767431942,\"t\":7,\"apm\":\"eb57685b1e53001\"},\"c\":{}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 20103,
+        "e": "无法找到此会话",
+        "s": 1767431942,
+        "t": 7,
+        "apm": "eb57685b1e53001"
+      },
+      "c": {}
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:02.818Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431942880",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{\"upstream\":\"US_NOTE\",\"upstream_entity_id\":\"1897763825525545792\"}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431942",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "236",
+        "date": "Sat, 03 Jan 2026 09:19:02 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431942,\"t\":6,\"apm\":\"eb57685cee52002\"},\"c\":{\"shortcuts\":[{\"image\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png\",\"icon\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png\",\"text\":\"Get日报\",\"type\":\"daily_report\",\"has_new\":false}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431942,
+        "t": 6,
+        "apm": "eb57685cee52002"
+      },
+      "c": {
+        "shortcuts": [
+          {
+            "image": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png",
+            "icon": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png",
+            "text": "Get日报",
+            "type": "daily_report",
+            "has_new": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:02.818Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431942880",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{\"upstream\":\"US_NOTE\",\"upstream_entity_id\":\"1897763825525545792\",\"notes\":{\"select_all\":true},\"web\":true,\"dedao\":true,\"study\":false,\"topics\":{},\"mode\":\"AUTO\",\"selected_resources\":[{\"type\":\"note\",\"resource_type\":\"note\",\"resource_id\":\"1897763825525545792\",\"upstream\":\"US_NOTE\"}]}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431942",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "257",
+        "date": "Sat, 03 Jan 2026 09:19:03 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431943,\"t\":685,\"apm\":\"eb57685d0432001\"},\"c\":{\"questions\":[{\"question\":\"整理训练频率对比表\",\"show_question\":\"整理训练频率对比表\"},{\"question\":\"分析上班族3练计划\",\"show_question\":\"分析上班族3练计划\"},{\"question\":\"计算训练组数公式\",\"show_question\":\"计算训练组数公式\"},{\"question\":\"确定新手指南12组计划\",\"show_question\":\"确定新手指南12组计划\"}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431943,
+        "t": 685,
+        "apm": "eb57685d0432001"
+      },
+      "c": {
+        "questions": [
+          {
+            "question": "整理训练频率对比表",
+            "show_question": "整理训练频率对比表"
+          },
+          {
+            "question": "分析上班族3练计划",
+            "show_question": "分析上班族3练计划"
+          },
+          {
+            "question": "计算训练组数公式",
+            "show_question": "计算训练组数公式"
+          },
+          {
+            "question": "确定新手指南12组计划",
+            "show_question": "确定新手指南12组计划"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:09.123Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/question_resource/config",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431949065",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431949",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "382",
+        "date": "Sat, 03 Jan 2026 09:19:09 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431949,\"t\":25,\"apm\":\"eb5768bf183f003\"},\"c\":{\"enable_deep_think_mode\":false,\"enable_auto_agent_mode\":false,\"auto_agent_mode_tip\":\"\",\"max_share_chat_message_count\":0,\"support_file_types\":[\"pdf\",\"docx\",\"doc\",\"xlsx\",\"csv\",\"ppt\",\"pptx\",\"jpg\",\"jpeg\",\"png\",\"gif\",\"webp\",\"tiff\",\"tif\"],\"file_parse_max_wait_ms\":1800000,\"total_resources_max_count\":50,\"topic_files_max_count\":10,\"local_files_max_count\":10,\"images_max_count\":10,\"note_max_count\":20,\"book_topic_max_count\":0,\"chat_file_max_size_byte\":104857600,\"chat_image_max_size_byte\":10485760,\"chat_image_max_width\":10240,\"chat_image_max_height\":10240,\"chat_image_max_pixels\":36000000,\"has_exceeded_daily_file_quota\":false}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431949,
+        "t": 25,
+        "apm": "eb5768bf183f003"
+      },
+      "c": {
+        "enable_deep_think_mode": false,
+        "enable_auto_agent_mode": false,
+        "auto_agent_mode_tip": "",
+        "max_share_chat_message_count": 0,
+        "support_file_types": [
+          "pdf",
+          "docx",
+          "doc",
+          "xlsx",
+          "csv",
+          "ppt",
+          "pptx",
+          "jpg",
+          "jpeg",
+          "png",
+          "gif",
+          "webp",
+          "tiff",
+          "tif"
+        ],
+        "file_parse_max_wait_ms": 1800000,
+        "total_resources_max_count": 50,
+        "topic_files_max_count": 10,
+        "local_files_max_count": 10,
+        "images_max_count": 10,
+        "note_max_count": 20,
+        "book_topic_max_count": 0,
+        "chat_file_max_size_byte": 104857600,
+        "chat_image_max_size_byte": 10485760,
+        "chat_image_max_width": 10240,
+        "chat_image_max_height": 10240,
+        "chat_image_max_pixels": 36000000,
+        "has_exceeded_daily_file_quota": false
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:09.123Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_shortcuts",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431949065",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431949",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "237",
+        "date": "Sat, 03 Jan 2026 09:19:09 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431949,\"t\":6,\"apm\":\"eb5768bf06d1002\"},\"c\":{\"shortcuts\":[{\"image\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png\",\"icon\":\"https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png\",\"text\":\"Get日报\",\"type\":\"daily_report\",\"has_new\":false}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431949,
+        "t": 6,
+        "apm": "eb5768bf06d1002"
+      },
+      "c": {
+        "shortcuts": [
+          {
+            "image": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDE0ODU2OTM1.png",
+            "icon": "https://piccdn2.umiwi.com/fe-oss/default/MTc1MDEzMTI1NDgx.png",
+            "text": "Get日报",
+            "type": "daily_report",
+            "has_new": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:09.125Z",
+    "method": "POST",
+    "url": "https://notes-api.biji.com/yoda/web/v1/chats/startup_questions",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431949065",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "application/json"
+    },
+    "postData": "{\"notes\":{\"select_all\":true},\"web\":true,\"dedao\":true,\"study\":false,\"topics\":{},\"mode\":\"AUTO\",\"selected_resources\":[]}",
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431949",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "716",
+        "date": "Sat, 03 Jan 2026 09:19:09 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431949,\"t\":15,\"apm\":\"eb5768bf5653002\"},\"c\":{\"questions\":[{\"question\":\"汇总一周笔记，生成“本周重点工作总结”和“下周计划”\",\"show_question\":\"帮我生成周报\"},{\"question\":\"提取一周笔记里的待办事项，按紧急-重要程度排序\",\"show_question\":\"整理一周待办\"},{\"question\":\"汇总过去 24 小时全球最值得关注的 10 条新闻，并各用 50 字摘要\",\"show_question\":\"24小时热点\"},{\"question\":\"请根据我提供的 [事件/产品/问题] 开展多维度的调研，包含背景、核心优势、争议点及当前现状。\",\"show_question\":\"多维度深度调研\"},{\"question\":\"遇到一个难题，稍后我会发给你，请在全部内容中搜索，有哪些解决方案或思维模型？\",\"show_question\":\"寻找解决方案\"},{\"question\":\"稍后我会发给你一个[主题/关键词]，请搜索得到内容，找出相关的精彩金句或颠覆性观点。\",\"show_question\":\"搜索金句/观点\"}]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431949,
+        "t": 15,
+        "apm": "eb5768bf5653002"
+      },
+      "c": {
+        "questions": [
+          {
+            "question": "汇总一周笔记，生成“本周重点工作总结”和“下周计划”",
+            "show_question": "帮我生成周报"
+          },
+          {
+            "question": "提取一周笔记里的待办事项，按紧急-重要程度排序",
+            "show_question": "整理一周待办"
+          },
+          {
+            "question": "汇总过去 24 小时全球最值得关注的 10 条新闻，并各用 50 字摘要",
+            "show_question": "24小时热点"
+          },
+          {
+            "question": "请根据我提供的 [事件/产品/问题] 开展多维度的调研，包含背景、核心优势、争议点及当前现状。",
+            "show_question": "多维度深度调研"
+          },
+          {
+            "question": "遇到一个难题，稍后我会发给你，请在全部内容中搜索，有哪些解决方案或思维模型？",
+            "show_question": "寻找解决方案"
+          },
+          {
+            "question": "稍后我会发给你一个[主题/关键词]，请搜索得到内容，找出相关的精彩金句或颠覆性观点。",
+            "show_question": "搜索金句/观点"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:16.131Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/user/info",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431956150",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431956",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "256",
+        "date": "Sat, 03 Jan 2026 09:19:16 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431956,\"t\":14,\"apm\":\"eb57692de259001\"},\"c\":{\"uid\":1840524,\"cellphone\":\"+86176****4026\",\"nickname\":\"Get达人\",\"avatar\":\"https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg\",\"status\":2,\"user_team_info\":null,\"create_time\":1767195847,\"update_time\":1767195847}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431956,
+        "t": 14,
+        "apm": "eb57692de259001"
+      },
+      "c": {
+        "uid": 1840524,
+        "cellphone": "+86176****4026",
+        "nickname": "Get达人",
+        "avatar": "https://pic-cdn.trytalks.com/pic/202306022120/avatar_191e7b2240007088.jpg",
+        "status": 2,
+        "user_team_info": null,
+        "create_time": 1767195847,
+        "update_time": 1767195847
+      }
+    }
+  },
+  {
+    "timestamp": "2026-01-03T09:19:16.317Z",
+    "method": "GET",
+    "url": "https://notes-api.biji.com/spacex/v1/web/team/list?is_owner=0",
+    "headers": {
+      "xi-csrf-token": "Wu1EmsoCqbwYHn4VolQPJSlN",
+      "x-request-id": "1767431956380",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMjM5MzcsImlhdCI6MTc2NzQzMTkzNywiaXNzIjoiZGRsbF9vZmZpY2FsIn0.wnBwVP8m6z76_R9M7WOt2ouldoXTqdb3ofkqlSnuaDk",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.biji.com/",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "x-team-id": "",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "x-team-id-alias": "",
+      "content-type": "application/json",
+      "x-topic-scope": "TEAMSPACE"
+    },
+    "postData": null,
+    "resourceType": "xhr",
+    "response": {
+      "status": 200,
+      "headers": {
+        "g-timestamp": "1767431956",
+        "content-encoding": "gzip",
+        "g-client-ip": "120.204.126.219",
+        "connection": "keep-alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET,POST,PUT,*",
+        "access-control-allow-origin": "*",
+        "content-length": "112",
+        "date": "Sat, 03 Jan 2026 09:19:16 GMT",
+        "g-powered-by": "ddgw/1.15.11",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin,X-Requested-With,Content-Type,Accept,X-Uid,X-Av,*"
+      },
+      "body": "{\"h\":{\"c\":0,\"e\":\"\",\"s\":1767431956,\"t\":4,\"apm\":\"eb57692fe6d2001\"},\"c\":{\"total\":0,\"list\":[]}}\n"
+    },
+    "responseJson": {
+      "h": {
+        "c": 0,
+        "e": "",
+        "s": 1767431956,
+        "t": 4,
+        "apm": "eb57692fe6d2001"
+      },
+      "c": {
+        "total": 0,
+        "list": []
+      }
+    }
+  }
+]

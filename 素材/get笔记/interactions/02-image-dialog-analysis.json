@@ -1,0 +1,21 @@
+{
+  "found": true,
+  "className": "yidun_popup--light yidun_popup yidun_popup--size-small  yidun_popup--append",
+  "innerHTML": "   <!-- iframe用于遮挡页面中object、embed、select等元素 -->   <iframe class=\"yidun_cover-frame\"></iframe>   <div class=\"yidun_popup__mask\" style=\"opacity: 0;\" aria-label=\"关闭\"></div>   <div class=\"yidun_modal__wrap\">     <div class=\"yidun_modal__subwrap\">              <div class=\"yidun_modal\" style=\"top: 20%; border-radius: 12px; \" tabindex=\"-1\">         <div class=\"yidun_modal__header\" style=\"height: 50px; text-align: center; border-bottom-color: #fff; \">             <span class=\"yidun_modal__before\"></span>             <span class=\"yidun_modal__title\" style=\"font-weight: 500; \" aria-label=\"请完成安全验证\">请完成安全验证</span>                        <button type=\"button\" class=\"yidun_modal__close\" aria-label=\"关闭\">               <span class=\"yidun_icon-close\">关闭</span>             </button>                    </div>         <div class=\"yidun_modal__body\" style=\"padding: 15px; padding-top: 0px;    \">           <div class=\"yidun yidun-custom yidun--light yidun--popup yidun--size-small yidun--jigsaw\" style=\"width: 250px; min-width: 220px\">   <div class=\"yidun_panel\" style=\"padding-bottom: 15px\">     <div class=\"yidun_panel-placeholder\">              <div class=\"yidun_bgimg\" style=\"border-radius: 12px\">                    <div class=\"yidun_smsbox \" style=\"border-radius: 12px\">             <div class=\"yidun_smsbox-qrcode\">             <div class=\"yidun_smsbox-qrcode--img\"></div>             </div>             <div class=\"yidun_smsbox-text\">               <div class=\"yidun_smsbox-text--guide\">                 <div class=\"yidun_smsbox-text--qr\">扫描二维码发送验证短信</div>                 <span class=\"yidun_smsbox-text--manual\" aria-label=\"手动发送验证短信\" type=\"button\">无法扫描二维码</span>               </div>             </div>             <div class=\"yidun_smsbox--mobile-wrapper\">               <div class=\"yidun_smsbox--mobile-guide\">点击按钮发送验证短信:</div>               <div class=\"yidun_smsbox--mobile-btn\">                 <a class=\"yidun_smsbox--mobile-btn-inner\" aria-label=\"去发送验证短信\" type=\"button\" href=\"#\" target=\"_blank\"",
+  "buttons": [
+    "关闭",
+    "播放语音验证码",
+    "刷新",
+    "刷新",
+    "返回",
+    "刷新",
+    "切换至语音验证码"
+  ],
+  "inputs": [
+    {
+      "type": "tel",
+      "placeholder": "请输入听到的内容",
+      "accept": ""
+    }
+  ]
+}

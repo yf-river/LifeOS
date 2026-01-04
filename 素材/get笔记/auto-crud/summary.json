@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-01-03T11:18:39.459Z",
+  "totalApis": 17,
+  "endpoints": {
+    "auth": [
+      "GET /spacex/v1/web/user/info"
+    ],
+    "notes": [
+      "GET /yoda/web/v1/chats/question_resource/config",
+      "POST /yoda/web/v1/chats/startup_shortcuts",
+      "POST /yoda/web/v1/chats/startup_questions",
+      "GET /spacex/v1/web/team/list",
+      "GET /yoda/web/v1/chats/entry"
+    ]
+  }
+}

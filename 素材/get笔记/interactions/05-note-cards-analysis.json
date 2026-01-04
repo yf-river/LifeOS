@@ -1,0 +1,303 @@
+{
+  "noteCards": [
+    {
+      "className": "note-item card",
+      "structure": {
+        "hasAIBadge": true,
+        "hasTimestamp": false,
+        "hasTags": true,
+        "hasMenu": false
+      },
+      "tags": [
+        {
+          "text": "AI链接笔记Cos智能体大模型应用AI插件开发",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(51, 54, 57)",
+          "className": "note-tags"
+        },
+        {
+          "text": "AI链接笔记",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag n-tag--icon system"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__icon"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "tag-icon ai_link"
+        },
+        {
+          "text": "AI链接笔记",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "Cos智能体",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "Cos智能体",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "大模型应用",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "大模型应用",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "AI插件开发",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "AI插件开发",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        }
+      ],
+      "aiElements": [
+        {
+          "text": "",
+          "className": "header-ai-icon"
+        },
+        {
+          "text": "【DeepSeek系列教程】Coze(扣子）工作流-10套实战案例，从入门到精通",
+          "className": "note-item-ai"
+        },
+        {
+          "text": "【DeepSeek系列教程】Coze(扣子）工作流-10套实战案例，从入门到精通",
+          "className": "note-item-ai-link w-full flex items-center"
+        },
+        {
+          "text": "",
+          "className": "tag-icon ai_link"
+        }
+      ]
+    },
+    {
+      "className": "note-item-header",
+      "structure": {
+        "hasAIBadge": true,
+        "hasTimestamp": false,
+        "hasTags": false,
+        "hasMenu": false
+      },
+      "tags": [],
+      "aiElements": [
+        {
+          "text": "",
+          "className": "header-ai-icon"
+        }
+      ]
+    },
+    {
+      "className": "note-item-ai",
+      "structure": {
+        "hasAIBadge": true,
+        "hasTimestamp": false,
+        "hasTags": false,
+        "hasMenu": false
+      },
+      "tags": [],
+      "aiElements": [
+        {
+          "text": "【DeepSeek系列教程】Coze(扣子）工作流-10套实战案例，从入门到精通",
+          "className": "note-item-ai-link w-full flex items-center"
+        }
+      ]
+    },
+    {
+      "className": "note-item-ai-link w-full flex items-center",
+      "structure": {
+        "hasAIBadge": false,
+        "hasTimestamp": false,
+        "hasTags": false,
+        "hasMenu": false
+      },
+      "tags": [],
+      "aiElements": []
+    },
+    {
+      "className": "note-item card",
+      "structure": {
+        "hasAIBadge": true,
+        "hasTimestamp": false,
+        "hasTags": true,
+        "hasMenu": false
+      },
+      "tags": [
+        {
+          "text": "AI链接笔记企业级应用平台工作流编排智能体构建",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(51, 54, 57)",
+          "className": "note-tags"
+        },
+        {
+          "text": "AI链接笔记",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag n-tag--icon system"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__icon"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "tag-icon ai_link"
+        },
+        {
+          "text": "AI链接笔记",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "企业级应用平台",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "企业级应用平台",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "工作流编排",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "工作流编排",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        },
+        {
+          "text": "智能体构建",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag"
+        },
+        {
+          "text": "智能体构建",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__content"
+        },
+        {
+          "text": "",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(103, 112, 132)",
+          "className": "n-tag__border"
+        }
+      ],
+      "aiElements": [
+        {
+          "text": "",
+          "className": "header-ai-icon"
+        },
+        {
+          "text": "Coze与Dify深度对比与实践体验",
+          "className": "note-item-ai"
+        },
+        {
+          "text": "Coze与Dify深度对比与实践体验",
+          "className": "note-item-ai-link w-full flex items-center"
+        },
+        {
+          "text": "",
+          "className": "tag-icon ai_link"
+        }
+      ]
+    },
+    {
+      "className": "note-item-header",
+      "structure": {
+        "hasAIBadge": true,
+        "hasTimestamp": false,
+        "hasTags": false,
+        "hasMenu": false
+      },
+      "tags": [],
+      "aiElements": [
+        {
+          "text": "",
+          "className": "header-ai-icon"
+        }
+      ]
+    }
+  ],
+  "tagPatterns": [],
+  "aiIndicators": []
+}

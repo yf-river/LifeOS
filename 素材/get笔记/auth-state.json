@@ -1,0 +1,95 @@
+{
+  "cookies": [
+    {
+      "name": "aliyungf_tc",
+      "value": "394a78edf3ea52e2b78fdf5e14e96e05ff092bd07e56008f0fa8dc6aa6ad8a2f",
+      "domain": "www.biji.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "acw_tc",
+      "value": "ac11000117674390490463892e004679b541d4ac83487136b3b3b4e6f942c2",
+      "domain": "www.biji.com",
+      "path": "/",
+      "expires": 1767440849.142873,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ISID",
+      "value": "13ef596a22d08953ddf7ff24c83c0f35",
+      "domain": ".biji.com",
+      "path": "/",
+      "expires": 1798975049.1429,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "csrfToken",
+      "value": "7Xqn-wxUaP4c5zE-DJeVBteU",
+      "domain": "www.biji.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__snaker__id",
+      "value": "ujOIrRozWZGUxkwT",
+      "domain": "www.biji.com",
+      "path": "/",
+      "expires": 1798975064,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "gdxidpyhxdE",
+      "value": "3%2Fc1q79K04tGeYmiTRLq%2F5ByirCp8CvYamCmiA%2BhQ4oUDTcSmg89QGW4YLl0foGODPv7Ke%2Bwx%2Ba08ngX0g7Gqmhn2i9Bf9Dfb3AzkHZQMG%5CONK63P12zjTImZggzBHSu9%5CVpchBtSdgzpyqg9pZ3uLz5rm8YaCEID5ZScW3zDQ6OfCAO%3A1767439965404",
+      "domain": "www.biji.com",
+      "path": "/",
+      "expires": 1770031965,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.biji.com",
+      "localStorage": [
+        {
+          "name": "token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE4NDA1MjQsImVudiI6InByb2R1Y3Rpb24iLCJleHAiOjE3NzAwMzEwNzYsImlhdCI6MTc2NzQzOTA3NiwiaXNzIjoiZGRsbF9vZmZpY2FsIn0.FZ9s2BFmAW8bBToIGpoZyhXK7Ms5aZ2bwe3caTKhU3c"
+        },
+        {
+          "name": "ujg3ps2znyw",
+          "value": "J8fvTt9SIvlERgAUFBaDzoQew0qi48lv"
+        },
+        {
+          "name": "/_4edec955fa3c4a5a9819d2947ef36438_NECAPTCHA_ERROR_COUNTS",
+          "value": "0"
+        },
+        {
+          "name": "__snaker__id",
+          "value": ""
+        },
+        {
+          "name": "ntes_utid",
+          "value": "tid._.lfJw4Pr%2FDpNFFgBAAEOH3tFL1gusXPif._.0.,.edd._.._.0"
+        },
+        {
+          "name": "assist_upload_config",
+          "value": "{\"supportFileTypes\":[\"pdf\",\"docx\",\"doc\",\"xlsx\",\"csv\",\"ppt\",\"pptx\",\"jpg\",\"jpeg\",\"png\",\"gif\",\"webp\",\"tiff\",\"tif\"],\"fileParseMaxWaitMs\":1800000,\"totalResourcesMaxCount\":50,\"topicFilesMaxCount\":10,\"localFilesMaxCount\":10,\"imagesMaxCount\":10,\"noteMaxCount\":20,\"chatFileMaxSizeByte\":104857600,\"chatImageMaxSizeByte\":10485760,\"chatImageMaxWidth\":10240,\"chatImageMaxHeight\":10240,\"chatImageMaxPixels\":36000000}"
+        }
+      ]
+    }
+  ]
+}
