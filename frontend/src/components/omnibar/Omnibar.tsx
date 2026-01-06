@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
-import Image from '@tiptap/extension-image';
+import { CustomImage } from '@/components/editor/extensions/CustomImage';
 import Link from '@tiptap/extension-link';
 import { useNotesStore, useUIStore } from '@/store';
 import { cn } from '@/lib/utils';
@@ -96,10 +96,7 @@ export function Omnibar() {
       Placeholder.configure({
         placeholder: '记录现在的想法...',
       }),
-      Image.configure({
-        inline: false,
-        allowBase64: true,
-      }),
+      CustomImage,
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
@@ -156,7 +153,11 @@ export function Omnibar() {
     reader.onload = async () => {
       const base64 = reader.result as string;
       // 插入临时的 base64 图片
-      editor.chain().focus().setImage({ src: base64 }).run();
+      const content = {
+        type: 'image',
+        attrs: { src: base64 },
+      };
+      editor.chain().focus().insertContent(content).run();
 
       // 上传到服务器
       const url = await uploadImage(file);
@@ -178,14 +179,19 @@ export function Omnibar() {
       const json = editor.getJSON();
       const text = editor.getText();
       
-      await createNote({
+      const newNote = await createNote({
         title: text.slice(0, 50),
         content: text,
         json_content: JSON.stringify(json),
       });
 
-      editor.commands.clearContent();
-      showToast('笔记已创建', 'success');
+      if (newNote) {
+        editor.commands.clearContent();
+        showToast('笔记已创建', 'success');
+      } else {
+        // createNote 返回 null 表示创建失败，错误信息已在 store 中设置
+        showToast('创建失败，请重试', 'error');
+      }
     } catch (error) {
       showToast('创建失败，请重试', 'error');
     } finally {
@@ -240,10 +246,10 @@ export function Omnibar() {
       {/* 输入框容器 */}
       <div
         className={cn(
-          'bg-white rounded-xl border transition-all duration-200 ease-in-out relative',
+          'bg-white rounded-xl border-2 transition-all duration-300 ease-in-out relative',
           isFocused
-            ? 'border-[#ccc] shadow-textarea'
-            : 'border-[#e5e6ea] hover:border-[#d4d4d7]'
+            ? 'border-blue-400 shadow-lg'
+            : 'border-gray-200 hover:border-gray-300'
         )}
       >
         {/* 上传中遮罩 */}
@@ -266,7 +272,7 @@ export function Omnibar() {
         </div>
 
         {/* 工具栏 */}
-        <div className="flex items-center justify-between px-3 py-2 border-t border-[#f0f0f0]">
+        <div className="flex items-center justify-between px-2 py-1.5 border-t border-gray-100">
           <div className="flex items-center gap-1">
             <ToolbarButton icon="image" title="插入图片" onClick={() => fileInputRef.current?.click()} />
             <ToolbarButton icon="bold" title="加粗" onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} />
@@ -283,8 +289,8 @@ export function Omnibar() {
             className={cn(
               'px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out',
               hasContent && !isSubmitting && !isUploading
-                ? 'bg-[#111418] text-white hover:bg-[#333] shadow-card hover:shadow-card-hover'
-                : 'bg-[rgba(41,45,52,0.1)] text-white cursor-not-allowed opacity-50'
+                ? 'bg-gray-800 text-white hover:bg-gray-900 shadow-sm'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
             )}
           >
             {isSubmitting ? '发送中...' : '发送'}
@@ -386,10 +392,10 @@ function ToolbarButton({
       onClick={onClick}
       title={title}
       className={cn(
-        'w-8 h-8 flex items-center justify-center rounded transition-all duration-150 ease-out',
+        'w-7 h-7 flex items-center justify-center rounded-md transition-all duration-150 ease-out',
         active
-          ? 'bg-[#f0f0f0] shadow-sm'
-          : 'hover:bg-[#f5f5f5] hover:shadow-sm'
+          ? 'bg-gray-200 text-gray-800'
+          : 'text-gray-500 hover:bg-gray-100 hover:text-gray-800'
       )}
     >
       <ToolbarIcon name={icon} active={active} />
@@ -399,7 +405,7 @@ function ToolbarButton({
 
 // 工具栏图标
 function ToolbarIcon({ name, active }: { name: string; active?: boolean }) {
-  const color = active ? '#111418' : '#8a8f99';
+  const color = active ? '#1f2937' : '#6b7280';
   
   switch (name) {
     case 'image':

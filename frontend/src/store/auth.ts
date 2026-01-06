@@ -43,7 +43,7 @@ export const useAuthStore = create<AuthState>()(
           const data = await apiClient.post<LoginResponse>('/auth/login', { email, password });
           const { token, user } = data;
           set({ token, user, isLoading: false });
-          localStorage.setItem('token', token);
+          localStorage.setItem('auth_token', token);
         } catch (err: unknown) {
           const error = err as Error;
           set({ error: error.message || '登录失败', isLoading: false });
@@ -56,7 +56,7 @@ export const useAuthStore = create<AuthState>()(
           const data = await apiClient.post<LoginResponse>('/auth/register', { email, password, nickname });
           const { token, user } = data;
           set({ token, user, isLoading: false });
-          localStorage.setItem('token', token);
+          localStorage.setItem('auth_token', token);
         } catch (err: unknown) {
           const error = err as Error;
           set({ error: error.message || '注册失败', isLoading: false });
@@ -65,7 +65,7 @@ export const useAuthStore = create<AuthState>()(
 
       logout: () => {
         set({ user: null, token: null });
-        localStorage.removeItem('token');
+        localStorage.removeItem('auth_token');
       },
 
       updateProfile: async (data: Partial<User>) => {

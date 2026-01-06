@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 
 from sqlalchemy import Column, String, Integer, Text, DateTime, ForeignKey, Boolean
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 
 from app.core import Base
@@ -23,7 +24,7 @@ class NoteVersion(Base):
     # 快照内容
     title = Column(String(500), nullable=True)
     content = Column(Text, nullable=True)
-    json_content = Column(Text, nullable=True)
+    json_content = Column(JSONB, nullable=True)
     
     # 变更信息
     change_type = Column(String(50), default="update")  # create, update, restore

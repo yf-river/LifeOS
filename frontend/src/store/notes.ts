@@ -138,17 +138,29 @@ export const useNotesStore = create<NotesState>((set, get) => ({
     set({ isSaving: true, error: null });
     try {
       const result = await apiClient.post<{ id: string; version: number }>('/notes', data);
+      // 构建新笔记对象：先展开 data，再用默认值覆盖 undefined 字段
       const newNote: Note = {
+        // 从 API 响应获取的必要字段
         id: result.id,
+        version: result.version,
+        // 使用传入数据，提供默认值
         title: data.title || '',
         content: data.content || '',
         json_content: data.json_content || '{"type":"doc","content":[]}',
-        is_pinned: false,
-        version: result.version,
-        tags: [],
+        is_pinned: data.is_pinned ?? false,
+        tags: data.tags ?? [],
+        // 时间戳
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
-        ...data,
+        // 可选字段从 data 中获取
+        note_type: data.note_type,
+        ai_generated: data.ai_generated,
+        source_url: data.source_url,
+        ai_summary: data.ai_summary,
+        media_url: data.media_url,
+        media_duration: data.media_duration,
+        images: data.images,
+        attachments: data.attachments,
       };
       set((state) => ({
         notes: [newNote, ...state.notes],

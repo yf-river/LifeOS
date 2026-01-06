@@ -245,6 +245,19 @@
   font-weight: 600;
 }
 
+.tiptap .selectedCell {
+  background-color: var(--aie-content-table-selected-bg-color);
+}
+
+/* 表格调整手柄 */
+.tiptap .tableWrapper {
+  overflow-x: auto;
+}
+
+.tiptap .resize-cursor {
+  cursor: col-resize;
+}
+
 /* 图片 */
 .tiptap img {
   max-width: 100%;

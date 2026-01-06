@@ -32,6 +32,8 @@ interface UIState {
     message: string;
     type: 'success' | 'error' | 'info' | 'warning';
   };
+  previewImageUrl: string | null; // For image zoom
+  selectedImageSrc: string | null;
   
   // Actions
   toggleSidebar: () => void;
@@ -49,6 +51,8 @@ interface UIState {
   hideConfirmDialog: () => void;
   showToast: (message: string, type?: 'success' | 'error' | 'info' | 'warning') => void;
   hideToast: () => void;
+  setPreviewImageUrl: (url: string | null) => void;
+  setSelectedImageSrc: (src: string | null) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -69,6 +73,8 @@ export const useUIStore = create<UIState>((set) => ({
     message: '',
     type: 'info',
   },
+  previewImageUrl: null,
+  selectedImageSrc: null,
 
   // Actions
   toggleSidebar: () =>
@@ -121,4 +127,6 @@ export const useUIStore = create<UIState>((set) => ({
         open: false,
       },
     })),
+  setPreviewImageUrl: (url) => set({ previewImageUrl: url }),
+  setSelectedImageSrc: (src) => set({ selectedImageSrc: src }),
 }));

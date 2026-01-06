@@ -221,7 +221,7 @@ async def update_note(
             version=note.version,
             title=note.title,
             content=note.content,
-            json_content=str(note.json_content) if note.json_content else None,
+            json_content=note.json_content,
             change_type="update",
         )
         db.add(version_snapshot)

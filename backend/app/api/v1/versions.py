@@ -120,7 +120,7 @@ async def restore_note_version(
         version=note.version,
         title=note.title,
         content=note.content,
-        json_content=str(note.json_content) if note.json_content else None,
+        json_content=note.json_content,
         change_type="update",
         change_summary="恢复前的版本",
     )
@@ -141,7 +141,7 @@ async def restore_note_version(
         version=note.version,
         title=note.title,
         content=note.content,
-        json_content=str(note.json_content) if note.json_content else None,
+        json_content=note.json_content,
         change_type="restore",
         change_summary=f"从版本 {target_version.version} 恢复",
     )
