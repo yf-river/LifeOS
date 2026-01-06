@@ -74,9 +74,11 @@ export const ImageView = ({ node }: NodeViewProps) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={cn(
-            'relative cursor-pointer select-none transition-all',
-            showBorder && 'ring-2 ring-purple-500'
+            'relative select-none transition-all',
+            isSelected ? 'cursor-zoom-in' : 'cursor-default',
+            showBorder && 'ring-2'
           )}
+          style={showBorder ? { '--tw-ring-color': 'rgb(116, 112, 241)' } as React.CSSProperties : undefined}
         >
           <img 
             src={src} 
@@ -84,6 +86,20 @@ export const ImageView = ({ node }: NodeViewProps) => {
             className="block w-full h-auto rounded-lg object-contain pointer-events-none" 
             draggable={false}
           />
+          
+          {/* 四角的小圆点 */}
+          {showBorder && (
+            <>
+              {/* 左上角 */}
+              <div className="absolute -top-1 -left-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
+              {/* 右上角 */}
+              <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
+              {/* 左下角 */}
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
+              {/* 右下角 */}
+              <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
+            </>
+          )}
         </div>
       </NodeViewWrapper>
 
