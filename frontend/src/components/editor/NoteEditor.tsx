@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState, useRef } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import Link from '@tiptap/extension-link';
-import { CustomImage } from './extensions/CustomImage';
+import { CustomImage, setImageClickHandler } from './extensions/CustomImage';
 import Highlight from '@tiptap/extension-highlight';
 import Underline from '@tiptap/extension-underline';
 import Table from '@tiptap/extension-table';
@@ -30,15 +30,23 @@ export function NoteEditor() {
   const { currentNote, updateNote, isSaving } = useNotesStore();
   const editorFullscreen = useUIStore((state) => state.editorFullscreen);
   const showToast = useUIStore((state) => state.showToast);
-  const previewImageUrl = useUIStore((state) => state.previewImageUrl);
-  const setPreviewImageUrl = useUIStore((state) => state.setPreviewImageUrl);
-  const setSelectedImageSrc = useUIStore((state) => state.setSelectedImageSrc);
+  
+  // 图片预览状态（使用本地 state 而不是全局 store）
+  const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
   
   console.log('NoteEditor render, previewImageUrl:', previewImageUrl);
-  
+
   const [title, setTitle] = useState('');
   const [lastSavedVersion, setLastSavedVersion] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
+
+  // 设置图片点击处理函数
+  useEffect(() => {
+    setImageClickHandler((src: string) => {
+      console.log('Image click handler called with src:', src);
+      setPreviewImageUrl(src);
+    });
+  }, []);
 
   // 初始化编辑器
   const editor = useEditor({
@@ -85,16 +93,6 @@ export function NoteEditor() {
         class: 'prose prose-sm max-w-none focus:outline-none min-h-[calc(100vh-200px)]',
       },
       handleDOMEvents: {
-        click: (view, event) => {
-          const target = event.target as HTMLElement;
-          // 如果点击的是图片节点，不处理（让 ImageView 处理）
-          if (target.closest('[data-image-node="true"]')) {
-            return false; // 不阻止图片的点击事件
-          }
-          // 点击其他区域时清除选中状态
-          setSelectedImageSrc(null);
-          return false;
-        },
         handlePaste: (view, event) => {
           const items = event.clipboardData?.items;
           if (!items) return false;
@@ -166,20 +164,6 @@ export function NoteEditor() {
       }
     }
   }, [currentNote?.id, editor]);
-
-  useEffect(() => {
-    if (!editor) return;
-    const handler = () => {
-      if (!editor.isActive('image')) {
-        setSelectedImageSrc(null);
-      }
-    };
-    editor.on('selectionUpdate', handler);
-    return () => {
-      editor.off('selectionUpdate', handler);
-    };
-  }, [editor, setSelectedImageSrc]);
-
 
   // 标题变更保存
   const handleTitleChange = useCallback(
@@ -295,10 +279,10 @@ export function NoteEditor() {
         onOpenChange={(isOpen) => {
           if (!isOpen) {
             setPreviewImageUrl(null);
-            setSelectedImageSrc(null);
           }
         }}
         imageUrl={previewImageUrl}
+        onImageClick={setPreviewImageUrl}
       />
     </div>
   );

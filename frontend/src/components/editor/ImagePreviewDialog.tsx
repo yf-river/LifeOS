@@ -16,7 +16,10 @@ export function ImagePreviewDialog({
   onOpenChange,
   imageUrl,
 }: ImagePreviewDialogProps) {
+  console.log('ImagePreviewDialog render:', { isOpen, imageUrl: imageUrl?.substring(0, 50) });
+  
   if (!imageUrl) {
+    console.log('ImagePreviewDialog: no imageUrl, returning null');
     return null;
   }
 

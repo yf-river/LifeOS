@@ -1,69 +1,116 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { NodeViewWrapper, NodeViewProps } from '@tiptap/react';
 import { cn } from '@/lib/utils';
-import { useUIStore } from '@/store';
+import { X } from 'lucide-react';
 
 export const ImageView = ({ node }: NodeViewProps) => {
   const { src, alt } = node.attrs;
-  const selectedImageSrc = useUIStore((state) => state.selectedImageSrc);
-  const setSelectedImageSrc = useUIStore((state) => state.setSelectedImageSrc);
-  const setPreviewImageUrl = useUIStore((state) => state.setPreviewImageUrl);
+  const [isSelected, setIsSelected] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   
-  const isSelected = selectedImageSrc === src;
+  // 监听点击外部区域，取消选中状态
+  useEffect(() => {
+    if (!isSelected) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      // 如果点击的是当前图片节点内部，不处理
+      if (containerRef.current?.contains(target)) {
+        return;
+      }
+      // 点击外部，取消选中
+      setIsSelected(false);
+    };
+
+    // 延迟添加监听器，避免当前点击事件触发
+    const timer = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 0);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isSelected]);
 
   const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log('Image clicked, src:', src);
-    console.log('Currently selected:', selectedImageSrc);
-    console.log('Is selected:', isSelected);
     
     if (isSelected) {
-      // 第二次点击：打开预览并清除选中状态
-      console.log('Opening preview for:', src);
-      setPreviewImageUrl(src);
-      setSelectedImageSrc(null); // 清除选中状态
+      // 第二次点击：打开预览
+      setShowPreview(true);
+      setIsSelected(false);
     } else {
       // 第一次点击：选中图片
-      console.log('Selecting image:', src);
-      setSelectedImageSrc(src);
+      setIsSelected(true);
     }
   };
 
+  const handleClose = () => {
+    setShowPreview(false);
+  };
+
+  // 是否显示紫框：悬浮或选中时显示
+  const showBorder = isHovered || isSelected;
+
   return (
-    <NodeViewWrapper
-      as="div"
-      data-image-node="true"
-      contentEditable={false}
-      className={cn('relative inline-block py-2', 'max-w-[50%] max-h-[80vh]')}
-    >
-      <div
-        onClick={handleClick}
-        onMouseDown={(e) => e.stopPropagation()} // 防止编辑器捕获点击
-        className={cn(
-          'relative cursor-pointer select-none',
-          isSelected && 'ring-2 ring-purple-500 ring-offset-2 rounded-lg'
-        )}
+    <>
+      <NodeViewWrapper
+        as="div"
+        data-image-node="true"
+        contentEditable={false}
+        className={cn('relative inline-block py-2', 'max-w-[50%] max-h-[80vh]')}
       >
-        <img 
-          src={src} 
-          alt={alt} 
-          className="block w-full h-auto rounded-lg object-contain pointer-events-none" 
-          draggable={false}
-        />
-        {isSelected && (
-          <div className="absolute top-2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8zm8-3a1 1 0 00-1 1v1H8a1 1 0 000 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V6a1 1 0 00-1-1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-        )}
-      </div>
-    </NodeViewWrapper>
+        <div
+          ref={containerRef}
+          onClick={handleClick}
+          onMouseDown={(e) => e.stopPropagation()}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className={cn(
+            'relative cursor-pointer select-none transition-all',
+            showBorder && 'ring-2 ring-purple-500'
+          )}
+        >
+          <img 
+            src={src} 
+            alt={alt} 
+            className="block w-full h-auto rounded-lg object-contain pointer-events-none" 
+            draggable={false}
+          />
+        </div>
+      </NodeViewWrapper>
+
+      {/* 图片预览弹窗 */}
+      {showPreview && typeof document !== 'undefined' && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80"
+          onClick={handleClose}
+        >
+          {/* 关闭按钮 */}
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          
+          {/* 图片 */}
+          <img
+            src={src}
+            alt={alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>,
+        document.body
+      )}
+    </>
   );
 };
