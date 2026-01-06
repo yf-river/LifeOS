@@ -2,15 +2,6 @@ import { Node, mergeAttributes } from '@tiptap/core';
 import { ReactNodeViewRenderer } from '@tiptap/react';
 import { ImageView } from './ImageView';
 
-// 全局回调存储
-let globalImageClickHandler: ((src: string) => void) | null = null;
-
-export const setImageClickHandler = (handler: (src: string) => void) => {
-  globalImageClickHandler = handler;
-};
-
-export const getImageClickHandler = () => globalImageClickHandler;
-
 export const CustomImage = Node.create({
   name: 'image',
   group: 'block',

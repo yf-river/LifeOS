@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useCallback, useState, useRef } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import Link from '@tiptap/extension-link';
-import { CustomImage, setImageClickHandler } from './extensions/CustomImage';
+import { CustomImage } from './extensions/CustomImage';
 import Highlight from '@tiptap/extension-highlight';
 import Underline from '@tiptap/extension-underline';
 import Table from '@tiptap/extension-table';
@@ -22,7 +22,6 @@ import { EditorHeader } from './EditorHeader';
 import { LinkPreview } from './extensions/LinkPreview';
 import { cn } from '@/lib/utils';
 import debounce from 'lodash.debounce';
-import { ImagePreviewDialog } from './ImagePreviewDialog';
 
 const lowlight = createLowlight(common);
 
@@ -31,29 +30,15 @@ export function NoteEditor() {
   const editorFullscreen = useUIStore((state) => state.editorFullscreen);
   const showToast = useUIStore((state) => state.showToast);
   
-  // 图片预览状态（使用本地 state 而不是全局 store）
-  const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
-  
-  console.log('NoteEditor render, previewImageUrl:', previewImageUrl);
-
   const [title, setTitle] = useState('');
   const [lastSavedVersion, setLastSavedVersion] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
-
-  // 设置图片点击处理函数
-  useEffect(() => {
-    setImageClickHandler((src: string) => {
-      console.log('Image click handler called with src:', src);
-      setPreviewImageUrl(src);
-    });
-  }, []);
 
   // 初始化编辑器
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
         codeBlock: false,
-        image: false, // 禁用 StarterKit 的默认 Image，使用我们的 CustomImage
       }),
       Placeholder.configure({
         placeholder: '开始记录你的想法...',
@@ -109,8 +94,7 @@ export function NoteEditor() {
           }
           return false;
         },
-        handleDrop: (view, event, slice, moved) => {
-          if (moved) return false;
+        drop: (view: any, event: DragEvent) => {
           const files = event.dataTransfer?.files;
           if (!files || files.length === 0) return false;
           const file = files[0];
@@ -274,16 +258,6 @@ export function NoteEditor() {
         </div>
       </div>
 
-      <ImagePreviewDialog
-        isOpen={!!previewImageUrl}
-        onOpenChange={(isOpen) => {
-          if (!isOpen) {
-            setPreviewImageUrl(null);
-          }
-        }}
-        imageUrl={previewImageUrl}
-        onImageClick={setPreviewImageUrl}
-      />
     </div>
   );
 }
