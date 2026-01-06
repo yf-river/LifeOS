@@ -53,8 +53,19 @@ export const ImageView = ({ node }: NodeViewProps) => {
       }
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
     window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [showPreview]);
 
   // 监听拖动
@@ -239,10 +250,10 @@ export const ImageView = ({ node }: NodeViewProps) => {
           
           {/* 图片容器 */}
           <div 
-            className="flex items-center justify-center w-full h-full overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+            className="flex items-center justify-center w-full h-full"
           >
             <div
+              onClick={(e) => e.stopPropagation()}
               style={{
                 transform: `translate(${position.x}px, ${position.y}px) scale(${scale}) rotate(${rotation}deg)`,
                 transformOrigin: 'center center',
