@@ -41,6 +41,34 @@ export const ImageView = ({ node }: NodeViewProps) => {
     };
   }, [isSelected]);
 
+  // 监听 Ctrl+C 复制图片
+  useEffect(() => {
+    if (!isSelected) return;
+
+    const handleCopy = async (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault();
+        try {
+          // 获取图片并转换为 Blob
+          const response = await fetch(src);
+          const blob = await response.blob();
+          
+          // 写入剪贴板
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              [blob.type]: blob,
+            }),
+          ]);
+        } catch (err) {
+          console.error('复制图片失败:', err);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleCopy);
+    return () => window.removeEventListener('keydown', handleCopy);
+  }, [isSelected, src]);
+
   // 监听滚轮缩放
   useEffect(() => {
     if (!showPreview) return;
