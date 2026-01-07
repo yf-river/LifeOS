@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { NodeViewWrapper, NodeViewProps } from '@tiptap/react';
 import { cn } from '@/lib/utils';
-import { X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
+import { X, ZoomIn, ZoomOut, RotateCw, Plus, Trash2 } from 'lucide-react';
 
-export const ImageView = ({ node }: NodeViewProps) => {
+export const ImageView = ({ node, editor, getPos }: NodeViewProps) => {
   const { src, alt } = node.attrs;
   const [isSelected, setIsSelected] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -167,6 +167,32 @@ export const ImageView = ({ node }: NodeViewProps) => {
     setDragStart({ x: e.clientX, y: e.clientY });
   };
 
+  // 在图片上方插入段落
+  const handleInsertBefore = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!editor || typeof getPos !== 'function') return;
+    const pos = getPos();
+    editor.chain().focus().insertContentAt(pos, { type: 'paragraph' }).run();
+    setIsSelected(false);
+  };
+
+  // 在图片下方插入段落
+  const handleInsertAfter = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!editor || typeof getPos !== 'function') return;
+    const pos = getPos() + node.nodeSize;
+    editor.chain().focus().insertContentAt(pos, { type: 'paragraph' }).run();
+    setIsSelected(false);
+  };
+
+  // 删除图片
+  const handleDelete = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!editor || typeof getPos !== 'function') return;
+    const pos = getPos();
+    editor.chain().focus().deleteRange({ from: pos, to: pos + node.nodeSize }).run();
+  };
+
   const showBorder = isHovered || isSelected;
 
   return (
@@ -205,6 +231,59 @@ export const ImageView = ({ node }: NodeViewProps) => {
               <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
               <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgb(116, 112, 241)' }} />
             </>
+          )}
+
+          {/* 悬浮操作按钮 - 选中时显示，位于图片下方居中 */}
+          {isSelected && (
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-12 flex items-center gap-1 bg-white rounded-lg shadow-lg border border-gray-200 px-1 py-1">
+              {/* 向上插入段落 */}
+              <div className="relative group/tooltip">
+                <button
+                  onClick={handleInsertBefore}
+                  className="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 transition-colors"
+                >
+                  <svg className="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="4" y="12" width="16" height="8" rx="1" />
+                    <path d="M12 8V3M9 5l3-3 3 3" />
+                  </svg>
+                </button>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                  向上插入段落
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+                </div>
+              </div>
+              
+              {/* 向下插入段落 */}
+              <div className="relative group/tooltip">
+                <button
+                  onClick={handleInsertAfter}
+                  className="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 transition-colors"
+                >
+                  <svg className="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="4" y="4" width="16" height="8" rx="1" />
+                    <path d="M12 16v5M9 19l3 3 3-3" />
+                  </svg>
+                </button>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                  向下插入段落
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+                </div>
+              </div>
+              
+              {/* 删除图片 */}
+              <div className="relative group/tooltip">
+                <button
+                  onClick={handleDelete}
+                  className="w-8 h-8 flex items-center justify-center rounded hover:bg-red-50 transition-colors group"
+                >
+                  <Trash2 className="w-5 h-5 text-gray-600 group-hover:text-red-500" />
+                </button>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                  删除
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </NodeViewWrapper>
