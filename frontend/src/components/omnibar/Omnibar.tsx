@@ -263,7 +263,21 @@ export function Omnibar() {
         )}
 
         {/* 编辑器区域 */}
-        <div className="px-4 pt-4 pb-2 max-h-[40vh] overflow-y-auto">
+        <div className="relative px-4 pt-4 pb-2 max-h-[40vh] overflow-y-auto">
+          {/* 放大按钮 */}
+          <button
+            onClick={() => {
+              // TODO: 跳转到全屏编辑器
+              console.log('打开全屏编辑器');
+            }}
+            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors z-10"
+            title="全屏编辑"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+            </svg>
+          </button>
+          
           <EditorContent 
             editor={editor} 
             onFocus={() => setIsFocused(true)}
