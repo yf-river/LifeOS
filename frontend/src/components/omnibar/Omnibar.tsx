@@ -272,7 +272,7 @@ export function Omnibar() {
         </div>
 
         {/* 工具栏 */}
-        <div className="flex items-center justify-between px-3 py-2 border-t border-gray-100 bg-gray-50/50">
+        <div className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center gap-1">
             {/* 插入图片 */}
             <ToolbarButton 
