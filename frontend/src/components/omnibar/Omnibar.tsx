@@ -106,40 +106,7 @@ export function Omnibar() {
     ],
     editorProps: {
       attributes: {
-        class: 'tiptap ProseMirror aie-content outline-none min-h-[40px] max-h-[200px] overflow-y-auto',
-      },
-      // 处理粘贴事件
-      handlePaste: (view, event) => {
-        const items = event.clipboardData?.items;
-        if (!items) return false;
-
-        for (let i = 0; i < items.length; i++) {
-          const item = items[i];
-          if (item.type.startsWith('image/')) {
-            event.preventDefault();
-            const file = item.getAsFile();
-            if (file) {
-              handleImageFile(file);
-            }
-            return true;
-          }
-        }
-        return false;
-      },
-      // 处理拖放事件
-      handleDrop: (view, event, slice, moved) => {
-        if (moved) return false;
-        
-        const files = event.dataTransfer?.files;
-        if (!files || files.length === 0) return false;
-
-        const file = files[0];
-        if (file.type.startsWith('image/')) {
-          event.preventDefault();
-          handleImageFile(file);
-          return true;
-        }
-        return false;
+        class: 'prose prose-sm focus:outline-none min-h-[120px]',
       },
     },
   });
@@ -152,12 +119,22 @@ export function Omnibar() {
     const reader = new FileReader();
     reader.onload = async () => {
       const base64 = reader.result as string;
-      // 插入临时的 base64 图片
-      const content = {
-        type: 'image',
-        attrs: { src: base64 },
-      };
-      editor.chain().focus().insertContent(content).run();
+      // 插入临时的 base64 图片，并在图片后添加两个空段落
+      editor.chain()
+        .focus()
+        .insertContent([
+          {
+            type: 'image',
+            attrs: { src: base64 },
+          },
+          {
+            type: 'paragraph',
+          },
+          {
+            type: 'paragraph',
+          },
+        ])
+        .run();
 
       // 上传到服务器
       const url = await uploadImage(file);
@@ -246,10 +223,10 @@ export function Omnibar() {
       {/* 输入框容器 */}
       <div
         className={cn(
-          'bg-white rounded-xl border-2 transition-all duration-300 ease-in-out relative',
+          'bg-white rounded-xl border-2 transition-all duration-200 ease-out relative overflow-hidden',
           isFocused
-            ? 'border-blue-400 shadow-lg'
-            : 'border-gray-200 hover:border-gray-300'
+            ? 'border-blue-400 shadow-xl shadow-blue-100/50'
+            : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
         )}
       >
         {/* 上传中遮罩 */}
@@ -263,7 +240,7 @@ export function Omnibar() {
         )}
 
         {/* 编辑器区域 */}
-        <div className="px-4 pt-4 pb-2">
+        <div className="px-4 pt-4 pb-2 max-h-[40vh] overflow-y-auto">
           <EditorContent 
             editor={editor} 
             onFocus={() => setIsFocused(true)}
@@ -272,14 +249,15 @@ export function Omnibar() {
         </div>
 
         {/* 工具栏 */}
-        <div className="flex items-center justify-between px-2 py-1.5 border-t border-gray-100">
-          <div className="flex items-center gap-1">
+        <div className="flex items-center justify-between px-3 py-2 border-t border-gray-100 bg-gray-50/50">
+          <div className="flex items-center gap-0.5">
             <ToolbarButton icon="image" title="插入图片" onClick={() => fileInputRef.current?.click()} />
-            <ToolbarButton icon="bold" title="加粗" onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} />
-            <ToolbarButton icon="color" title="文字颜色" />
-            <ToolbarButton icon="italic" title="斜体" onClick={() => editor?.chain().focus().toggleItalic().run()} active={editor?.isActive('italic')} />
+            <ToolbarButton icon="bold" title="加粗 (⌘B)" onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} />
+            <ToolbarButton icon="italic" title="斜体 (⌘I)" onClick={() => editor?.chain().focus().toggleItalic().run()} active={editor?.isActive('italic')} />
+            <div className="w-px h-5 bg-gray-300 mx-1" />
             <ToolbarButton icon="orderedList" title="有序列表" onClick={() => editor?.chain().focus().toggleOrderedList().run()} active={editor?.isActive('orderedList')} />
             <ToolbarButton icon="bulletList" title="无序列表" onClick={() => editor?.chain().focus().toggleBulletList().run()} active={editor?.isActive('bulletList')} />
+            <div className="w-px h-5 bg-gray-300 mx-1" />
             <ToolbarButton icon="link" title="插入链接" onClick={() => handleQuickAction('link')} active={editor?.isActive('link')} />
           </div>
 
@@ -287,66 +265,57 @@ export function Omnibar() {
             onClick={handleSubmit}
             disabled={!hasContent || isSubmitting || isUploading}
             className={cn(
-              'px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out',
+              'px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+              'shadow-sm hover:shadow-md transform hover:scale-105 active:scale-95',
               hasContent && !isSubmitting && !isUploading
-                ? 'bg-gray-800 text-white hover:bg-gray-900 shadow-sm'
-                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                ? 'bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-900 hover:to-black'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none hover:scale-100'
             )}
           >
-            {isSubmitting ? '发送中...' : '发送'}
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <LoadingSpinner />
+                发送中
+              </span>
+            ) : '发送'}
           </button>
         </div>
-
-        {/* 链接输入弹出框 */}
-        {showLinkInput && (
-          <div className="absolute bottom-full left-0 mb-2 p-3 bg-white rounded-lg shadow-lg border border-[#e5e6ea] z-20">
-            <div className="flex items-center gap-2">
-              <input
-                ref={linkInputRef}
-                type="text"
-                value={linkUrl}
-                onChange={(e) => setLinkUrl(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleInsertLink();
-                  if (e.key === 'Escape') setShowLinkInput(false);
-                }}
-                placeholder="输入链接地址..."
-                className="w-64 px-3 py-1.5 text-sm border border-[#e5e6ea] rounded focus:outline-none focus:border-[#2a88ff]"
-              />
-              <button
-                onClick={handleInsertLink}
-                className="px-3 py-1.5 text-sm bg-[#2a88ff] text-white rounded hover:bg-[#1a78ef]"
-              >
-                插入
-              </button>
-              <button
-                onClick={() => setShowLinkInput(false)}
-                className="px-3 py-1.5 text-sm text-[#8a8f99] hover:text-[#333]"
-              >
-                取消
-              </button>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* 快捷入口 */}
       <div>
-        <p className="text-sm text-[#8a8f99] mb-2">你还可以：</p>
-        <div className="flex gap-3">
+        <p className="text-sm text-gray-500 mb-3 font-medium">你还可以：</p>
+        <div className="grid grid-cols-3 gap-3">
           {QUICK_ACTIONS.map((action) => (
             <motion.button
               key={action.id}
               onClick={() => handleQuickAction(action.id)}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.15 }}
-              className="flex-1 flex items-center gap-3 px-4 py-3 bg-white rounded-lg border border-[#e5e6ea] hover:border-[#ccc] hover:shadow-card transition-all duration-200 ease-in-out"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className={cn(
+                'flex items-center gap-3 px-4 py-3.5 bg-white rounded-xl',
+                'border border-gray-200 hover:border-gray-300',
+                'hover:shadow-lg transition-all duration-200',
+                'group relative overflow-hidden'
+              )}
             >
-              <QuickActionIcon name={action.icon} color={action.color} />
-              <div className="text-left">
-                <p className="text-sm font-medium text-[#333639]">{action.label}</p>
-                <p className="text-xs text-[#8a8f99]">{action.subtitle}</p>
+              {/* 悬浮背景渐变 */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ 
+                  background: `linear-gradient(135deg, ${action.color}10 0%, ${action.color}05 100%)` 
+                }}
+              />
+              
+              <div className="relative z-10 flex items-center gap-3 w-full">
+                <QuickActionIcon name={action.icon} color={action.color} />
+                <div className="text-left flex-1">
+                  <p className="text-sm font-medium text-gray-900 group-hover:text-gray-800 transition-colors">
+                    {action.label}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-0.5">{action.subtitle}</p>
+                </div>
               </div>
             </motion.button>
           ))}
@@ -392,10 +361,11 @@ function ToolbarButton({
       onClick={onClick}
       title={title}
       className={cn(
-        'w-7 h-7 flex items-center justify-center rounded-md transition-all duration-150 ease-out',
+        'w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200',
+        'hover:scale-110 active:scale-95',
         active
-          ? 'bg-gray-200 text-gray-800'
-          : 'text-gray-500 hover:bg-gray-100 hover:text-gray-800'
+          ? 'bg-gray-800 text-white shadow-sm'
+          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
       )}
     >
       <ToolbarIcon name={icon} active={active} />
