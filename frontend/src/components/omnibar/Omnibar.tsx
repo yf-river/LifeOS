@@ -49,7 +49,7 @@ const QUICK_ACTIONS = [
 
 export function Omnibar() {
   const { createNote } = useNotesStore();
-  const { showToast } = useUIStore();
+  const { showToast, setViewMode } = useUIStore();
   const [isFocused, setIsFocused] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -266,9 +266,25 @@ export function Omnibar() {
         <div className="relative px-4 pt-4 pb-2 max-h-[40vh] overflow-y-auto">
           {/* 放大按钮 */}
           <button
-            onClick={() => {
-              // TODO: 跳转到全屏编辑器
-              console.log('打开全屏编辑器');
+            onClick={async () => {
+              if (!editor) return;
+              
+              const text = editor.getText();
+              const json = editor.getJSON();
+              
+              // 创建新笔记并跳转到详情页
+              const newNote = await createNote({
+                title: text.slice(0, 50) || '新笔记',
+                content: text,
+                json_content: JSON.stringify(json),
+              });
+              
+              if (newNote) {
+                // 清空编辑器
+                editor.commands.clearContent();
+                // 切换到详情视图
+                setViewMode('detail');
+              }
             }}
             className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors z-10"
             title="全屏编辑"
