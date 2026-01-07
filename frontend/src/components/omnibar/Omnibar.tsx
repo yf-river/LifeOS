@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import { CustomImage } from '@/components/editor/extensions/CustomImage';
 import Link from '@tiptap/extension-link';
+import Underline from '@tiptap/extension-underline';
 import { useNotesStore, useUIStore } from '@/store';
 import { cn } from '@/lib/utils';
 
@@ -86,13 +87,35 @@ export function Omnibar() {
     }
   };
 
+  // 文本格式下拉框状态
+  const [showFormatDropdown, setShowFormatDropdown] = useState(false);
+  const formatDropdownRef = useRef<HTMLDivElement>(null);
+
+  // 点击外部关闭下拉框
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (formatDropdownRef.current && !formatDropdownRef.current.contains(event.target as Node)) {
+        setShowFormatDropdown(false);
+      }
+    };
+    if (showFormatDropdown) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [showFormatDropdown]);
+
+
+
   // Tiptap 编辑器
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: false,
+        heading: {
+          levels: [1, 2, 3],
+        },
         codeBlock: false,
       }),
+      Underline,
       Placeholder.configure({
         placeholder: '记录现在的想法...',
       }),
@@ -250,15 +273,132 @@ export function Omnibar() {
 
         {/* 工具栏 */}
         <div className="flex items-center justify-between px-3 py-2 border-t border-gray-100 bg-gray-50/50">
-          <div className="flex items-center gap-0.5">
-            <ToolbarButton icon="image" title="插入图片" onClick={() => fileInputRef.current?.click()} />
-            <ToolbarButton icon="bold" title="加粗 (⌘B)" onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} />
-            <ToolbarButton icon="italic" title="斜体 (⌘I)" onClick={() => editor?.chain().focus().toggleItalic().run()} active={editor?.isActive('italic')} />
-            <div className="w-px h-5 bg-gray-300 mx-1" />
-            <ToolbarButton icon="orderedList" title="有序列表" onClick={() => editor?.chain().focus().toggleOrderedList().run()} active={editor?.isActive('orderedList')} />
-            <ToolbarButton icon="bulletList" title="无序列表" onClick={() => editor?.chain().focus().toggleBulletList().run()} active={editor?.isActive('bulletList')} />
-            <div className="w-px h-5 bg-gray-300 mx-1" />
-            <ToolbarButton icon="link" title="插入链接" onClick={() => handleQuickAction('link')} active={editor?.isActive('link')} />
+          <div className="flex items-center gap-1">
+            {/* 插入图片 */}
+            <ToolbarButton 
+              icon="image" 
+              tooltip="插入图片"
+              onClick={() => fileInputRef.current?.click()} 
+            />
+            
+            <div className="w-px h-5 bg-gray-200 mx-0.5" />
+            
+            {/* 文本格式下拉框 */}
+            <div className="relative" ref={formatDropdownRef}>
+              <ToolbarButton 
+                icon="textFormat" 
+                tooltip="切换文本格式"
+                onClick={() => setShowFormatDropdown(!showFormatDropdown)} 
+                active={editor?.isActive('heading')}
+                hasDropdown
+              />
+              {showFormatDropdown && (
+                <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 min-w-[120px]">
+                  <button
+                    onClick={() => {
+                      editor?.chain().focus().setParagraph().run();
+                      setShowFormatDropdown(false);
+                    }}
+                    className={cn(
+                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      !editor?.isActive('heading') && 'bg-gray-50'
+                    )}
+                  >
+                    <span className="text-gray-500 w-6">T</span>
+                    <span>正文</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      editor?.chain().focus().toggleHeading({ level: 1 }).run();
+                      setShowFormatDropdown(false);
+                    }}
+                    className={cn(
+                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      editor?.isActive('heading', { level: 1 }) && 'bg-gray-50'
+                    )}
+                  >
+                    <span className="text-gray-500 w-6 font-bold">H1</span>
+                    <span>标题 1</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      editor?.chain().focus().toggleHeading({ level: 2 }).run();
+                      setShowFormatDropdown(false);
+                    }}
+                    className={cn(
+                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      editor?.isActive('heading', { level: 2 }) && 'bg-gray-50'
+                    )}
+                  >
+                    <span className="text-gray-500 w-6 font-bold">H2</span>
+                    <span>标题 2</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      editor?.chain().focus().toggleHeading({ level: 3 }).run();
+                      setShowFormatDropdown(false);
+                    }}
+                    className={cn(
+                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      editor?.isActive('heading', { level: 3 }) && 'bg-gray-50'
+                    )}
+                  >
+                    <span className="text-gray-500 w-6 font-bold">H3</span>
+                    <span>标题 3</span>
+                  </button>
+                </div>
+              )}
+            </div>
+            
+            <div className="w-px h-5 bg-gray-200 mx-0.5" />
+            
+            {/* 加粗 */}
+            <ToolbarButton 
+              icon="bold" 
+              tooltip="加粗 Ctrl+B"
+              onClick={() => editor?.chain().focus().toggleBold().run()} 
+              active={editor?.isActive('bold')} 
+            />
+            
+            {/* 斜体 */}
+            <ToolbarButton 
+              icon="italic" 
+              tooltip="斜体 Ctrl+I"
+              onClick={() => editor?.chain().focus().toggleItalic().run()} 
+              active={editor?.isActive('italic')} 
+            />
+            
+            {/* 下划线 */}
+            <ToolbarButton 
+              icon="underline" 
+              tooltip="下划线 Ctrl+U"
+              onClick={() => editor?.chain().focus().toggleUnderline().run()} 
+              active={editor?.isActive('underline')} 
+            />
+            
+            {/* 引用 */}
+            <ToolbarButton 
+              icon="quote" 
+              tooltip="引用"
+              onClick={() => editor?.chain().focus().toggleBlockquote().run()} 
+              active={editor?.isActive('blockquote')} 
+            />
+            
+            {/* 有序列表 */}
+            <ToolbarButton 
+              icon="orderedList" 
+              tooltip="有序列表"
+              onClick={() => editor?.chain().focus().toggleOrderedList().run()} 
+              active={editor?.isActive('orderedList')} 
+            />
+            
+            {/* 无序列表 */}
+            <ToolbarButton 
+              icon="bulletList" 
+              tooltip="无序列表"
+              onClick={() => editor?.chain().focus().toggleBulletList().run()} 
+              active={editor?.isActive('bulletList')} 
+            />
           </div>
 
           <button
@@ -344,79 +484,94 @@ function LoadingSpinner() {
   );
 }
 
-// 工具栏按钮
+// 工具栏按钮（带自定义 tooltip）
 function ToolbarButton({
   icon,
-  title,
+  tooltip,
   active,
-  onClick
+  onClick,
+  hasDropdown
 }: {
   icon: string;
-  title: string;
+  tooltip: string;
   active?: boolean;
   onClick?: () => void;
+  hasDropdown?: boolean;
 }) {
   return (
-    <button
-      onClick={onClick}
-      title={title}
-      className={cn(
-        'w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200',
-        'hover:scale-110 active:scale-95',
-        active
-          ? 'bg-gray-800 text-white shadow-sm'
-          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-      )}
-    >
-      <ToolbarIcon name={icon} active={active} />
-    </button>
+    <div className="relative group/btn">
+      <button
+        onClick={onClick}
+        className={cn(
+          'w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200',
+          'hover:bg-gray-100 active:scale-95',
+          active && 'bg-gray-200'
+        )}
+      >
+        <ToolbarIcon name={icon} active={active} />
+        {hasDropdown && (
+          <svg className="w-3 h-3 ml-0.5 text-gray-500" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 10l5 5 5-5z" />
+          </svg>
+        )}
+      </button>
+      {/* 自定义 Tooltip */}
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none z-50">
+        {tooltip}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+      </div>
+    </div>
   );
 }
 
 // 工具栏图标
 function ToolbarIcon({ name, active }: { name: string; active?: boolean }) {
-  const color = active ? '#1f2937' : '#6b7280';
+  const color = active ? '#1f2937' : '#4b5563';
   
   switch (name) {
-    case 'image':
+    case 'textFormat':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
-          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-        </svg>
+        <span className="text-base font-medium" style={{ color }}>T</span>
       );
     case 'bold':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
-          <path d="M15.6 10.79c.97-.67 1.65-1.77 1.65-2.79 0-2.26-1.75-4-4-4H7v14h7.04c2.09 0 3.71-1.7 3.71-3.79 0-1.52-.86-2.82-2.15-3.42zM10 6.5h3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3v-3zm3.5 9H10v-3h3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z" />
-        </svg>
-      );
-    case 'color':
-      return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
-          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-        </svg>
+        <span className="text-base font-bold" style={{ color }}>B</span>
       );
     case 'italic':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
-          <path d="M10 4v3h2.21l-3.42 8H6v3h8v-3h-2.21l3.42-8H18V4z" />
+        <span className="text-base italic font-serif" style={{ color }}>I</span>
+      );
+    case 'underline':
+      return (
+        <span className="text-base underline" style={{ color }}>U</span>
+      );
+    case 'quote':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
+          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
         </svg>
       );
     case 'orderedList':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
           <path d="M2 17h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1 3h1.8L2 13.1v.9h3v-1H3.2L5 10.9V10H2v1zm5-6v2h14V5H7zm0 14h14v-2H7v2zm0-6h14v-2H7v2z" />
         </svg>
       );
     case 'bulletList':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
           <path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z" />
+        </svg>
+      );
+    case 'image':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
+          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
         </svg>
       );
     case 'link':
       return (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill={color}>
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill={color}>
           <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" />
         </svg>
       );
