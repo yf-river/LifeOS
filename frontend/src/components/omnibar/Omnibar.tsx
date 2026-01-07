@@ -129,7 +129,7 @@ export function Omnibar() {
     ],
     editorProps: {
       attributes: {
-        class: 'prose prose-sm focus:outline-none min-h-[120px]',
+        class: 'prose prose-sm focus:outline-none min-h-[120px] aie-content',
       },
     },
   });
@@ -246,10 +246,10 @@ export function Omnibar() {
       {/* 输入框容器 */}
       <div
         className={cn(
-          'bg-white rounded-xl border-2 transition-all duration-200 ease-out relative overflow-hidden',
+          'bg-white rounded-xl transition-all duration-200 ease-out relative',
           isFocused
-            ? 'border-blue-400 shadow-xl shadow-blue-100/50'
-            : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
+            ? 'shadow-xl shadow-gray-200/80'
+            : 'shadow-md shadow-gray-100/80 hover:shadow-lg'
         )}
       >
         {/* 上传中遮罩 */}
@@ -278,7 +278,8 @@ export function Omnibar() {
             <ToolbarButton 
               icon="image" 
               tooltip="插入图片"
-              onClick={() => fileInputRef.current?.click()} 
+              onClick={() => fileInputRef.current?.click()}
+              tooltipAlign="left"
             />
             
             <div className="w-px h-5 bg-gray-200 mx-0.5" />
@@ -293,19 +294,19 @@ export function Omnibar() {
                 hasDropdown
               />
               {showFormatDropdown && (
-                <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 min-w-[120px]">
+                <div className="absolute bottom-full left-0 mb-1 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 min-w-[140px]">
                   <button
                     onClick={() => {
                       editor?.chain().focus().setParagraph().run();
                       setShowFormatDropdown(false);
                     }}
                     className={cn(
-                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      'w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-3',
                       !editor?.isActive('heading') && 'bg-gray-50'
                     )}
                   >
-                    <span className="text-gray-500 w-6">T</span>
-                    <span>正文</span>
+                    <span className="text-gray-400 w-7 text-base">T</span>
+                    <span className="text-sm text-gray-700">正文</span>
                   </button>
                   <button
                     onClick={() => {
@@ -313,12 +314,12 @@ export function Omnibar() {
                       setShowFormatDropdown(false);
                     }}
                     className={cn(
-                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      'w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-3',
                       editor?.isActive('heading', { level: 1 }) && 'bg-gray-50'
                     )}
                   >
-                    <span className="text-gray-500 w-6 font-bold">H1</span>
-                    <span>标题 1</span>
+                    <span className="text-gray-400 w-7 text-lg font-semibold">H1</span>
+                    <span className="text-base font-semibold text-gray-700">标题 1</span>
                   </button>
                   <button
                     onClick={() => {
@@ -326,12 +327,12 @@ export function Omnibar() {
                       setShowFormatDropdown(false);
                     }}
                     className={cn(
-                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      'w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-3',
                       editor?.isActive('heading', { level: 2 }) && 'bg-gray-50'
                     )}
                   >
-                    <span className="text-gray-500 w-6 font-bold">H2</span>
-                    <span>标题 2</span>
+                    <span className="text-gray-400 w-7 text-base font-semibold">H2</span>
+                    <span className="text-sm font-medium text-gray-700">标题 2</span>
                   </button>
                   <button
                     onClick={() => {
@@ -339,12 +340,12 @@ export function Omnibar() {
                       setShowFormatDropdown(false);
                     }}
                     className={cn(
-                      'w-full px-3 py-1.5 text-left text-sm hover:bg-gray-100 flex items-center gap-2',
+                      'w-full px-3 py-2 text-left hover:bg-gray-100 flex items-center gap-3',
                       editor?.isActive('heading', { level: 3 }) && 'bg-gray-50'
                     )}
                   >
-                    <span className="text-gray-500 w-6 font-bold">H3</span>
-                    <span>标题 3</span>
+                    <span className="text-gray-400 w-7 text-sm font-medium">H3</span>
+                    <span className="text-sm text-gray-700">标题 3</span>
                   </button>
                 </div>
               )}
@@ -405,19 +406,20 @@ export function Omnibar() {
             onClick={handleSubmit}
             disabled={!hasContent || isSubmitting || isUploading}
             className={cn(
-              'px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-              'shadow-sm hover:shadow-md transform hover:scale-105 active:scale-95',
+              'px-5 h-10 rounded-lg flex items-center justify-center transition-all duration-200',
+              'hover:scale-105 active:scale-95',
               hasContent && !isSubmitting && !isUploading
-                ? 'bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-900 hover:to-black'
-                : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none hover:scale-100'
+                ? 'bg-gray-900 text-white hover:bg-black'
+                : 'bg-gray-100 text-gray-300 cursor-not-allowed hover:scale-100'
             )}
           >
             {isSubmitting ? (
-              <span className="flex items-center gap-2">
-                <LoadingSpinner />
-                发送中
-              </span>
-            ) : '发送'}
+              <LoadingSpinner />
+            ) : (
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
@@ -490,14 +492,28 @@ function ToolbarButton({
   tooltip,
   active,
   onClick,
-  hasDropdown
+  hasDropdown,
+  tooltipAlign = 'center'
 }: {
   icon: string;
   tooltip: string;
   active?: boolean;
   onClick?: () => void;
   hasDropdown?: boolean;
+  tooltipAlign?: 'left' | 'center' | 'right';
 }) {
+  const tooltipPositionClass = {
+    left: 'left-0',
+    center: 'left-1/2 -translate-x-1/2',
+    right: 'right-0'
+  }[tooltipAlign];
+  
+  const arrowPositionClass = {
+    left: 'left-4',
+    center: 'left-1/2 -translate-x-1/2',
+    right: 'right-4'
+  }[tooltipAlign];
+
   return (
     <div className="relative group/btn">
       <button
@@ -516,9 +532,12 @@ function ToolbarButton({
         )}
       </button>
       {/* 自定义 Tooltip */}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none z-50">
+      <div className={cn(
+        "absolute bottom-full mb-2 px-2 py-1 bg-gray-900 text-white text-sm rounded whitespace-nowrap opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none z-50",
+        tooltipPositionClass
+      )}>
         {tooltip}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+        <div className={cn("absolute top-full border-4 border-transparent border-t-gray-900", arrowPositionClass)} />
       </div>
     </div>
   );
