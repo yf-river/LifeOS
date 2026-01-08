@@ -274,7 +274,7 @@ export function Omnibar() {
               
               // 创建新笔记并跳转到详情页
               const newNote = await createNote({
-                title: text.slice(0, 50) || '新笔记',
+                title: text.slice(0, 50) || '',
                 content: text,
                 json_content: JSON.stringify(json),
               });

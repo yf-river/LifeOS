@@ -55,7 +55,11 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
   // 添加图片
   const handleAddImage = useCallback(() => {
     if (imageUrl) {
-      editor.chain().focus().setImage({ src: imageUrl }).run();
+      // 使用 insertContent 来插入图片，避免类型问题
+      editor.chain().focus().insertContent({
+        type: 'image',
+        attrs: { src: imageUrl }
+      }).run();
       setImageUrl('');
       setShowImageDialog(false);
     }
