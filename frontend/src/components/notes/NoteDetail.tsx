@@ -20,6 +20,8 @@ import { useNotesStore, useUIStore } from '@/store';
 import { cn } from '@/lib/utils';
 import debounce from 'lodash.debounce';
 import { VersionHistory } from './VersionHistory';
+import { TagSelector } from './TagSelector';
+import { useTagsStore, Tag } from '@/store/tags';
 
 const lowlight = createLowlight(common);
 
@@ -51,9 +53,12 @@ export function NoteDetail() {
   const [showFormatDropdown, setShowFormatDropdown] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const [showTagSelector, setShowTagSelector] = useState(false);
   const formatDropdownRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const titleInputRef = useRef<HTMLInputElement>(null);
+  
+  const { addTagToNote, removeTagFromNote } = useTagsStore();
 
   // 点击外部关闭下拉框
   useEffect(() => {
@@ -193,7 +198,7 @@ export function NoteDetail() {
     }
   }, [currentNote?.id, editor]);
 
-  // 手动保存
+  // 保存并返回主页
   const handleSave = useCallback(() => {
     if (editor && currentNote) {
       updateNote(
@@ -206,9 +211,12 @@ export function NoteDetail() {
         currentNote.version
       );
       setHasUnsavedChanges(false);
-      showToast('保存成功', 'success');
+      showToast('笔记创建成功', 'success');
+      // 返回主页
+      setCurrentNote(null);
+      setViewMode('list');
     }
-  }, [editor, currentNote, title, updateNote, showToast]);
+  }, [editor, currentNote, title, updateNote, showToast, setCurrentNote, setViewMode]);
 
   // 快捷键保存 (⌘+S / Ctrl+S)
   useEffect(() => {
@@ -222,11 +230,8 @@ export function NoteDetail() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleSave]);
 
-  // 返回列表
+  // 返回列表（不保存）
   const handleBack = () => {
-    if (hasUnsavedChanges) {
-      handleSave();
-    }
     setCurrentNote(null);
     setViewMode('list');
   };
@@ -277,6 +282,43 @@ export function NoteDetail() {
   // 插入表格
   const handleInsertTable = () => {
     editor?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run();
+  };
+
+  // 添加标签
+  const handleAddTag = async (tag: Tag) => {
+    if (!currentNote) return;
+    
+    const success = await addTagToNote(currentNote.id, [tag.id]);
+    if (success) {
+      // 更新本地笔记的标签列表
+      const updatedNote = {
+        ...currentNote,
+        tags: [...(currentNote.tags || []), tag],
+      };
+      setCurrentNote(updatedNote);
+      showToast('标签添加成功', 'success');
+      // 不关闭选择器，让用户可以继续添加
+    } else {
+      showToast('标签添加失败', 'error');
+    }
+  };
+
+  // 移除标签
+  const handleRemoveTag = async (tagId: string) => {
+    if (!currentNote) return;
+    
+    const success = await removeTagFromNote(currentNote.id, tagId);
+    if (success) {
+      // 更新本地笔记的标签列表
+      const updatedNote = {
+        ...currentNote,
+        tags: (currentNote.tags || []).filter((t: Tag) => t.id !== tagId),
+      };
+      setCurrentNote(updatedNote);
+      showToast('标签移除成功', 'success');
+    } else {
+      showToast('标签移除失败', 'error');
+    }
   };
 
   if (!currentNote) {
@@ -523,20 +565,39 @@ export function NoteDetail() {
           />
 
           {/* 标签区 */}
-          <div className="flex flex-wrap items-center gap-2 mb-6">
+          <div className="flex flex-wrap items-center gap-2 mb-6 relative">
             <span className="text-sm text-[#8a8f99]">标签:</span>
-            {currentNote.tags?.map((tag: any) => (
+            {currentNote.tags?.map((tag: Tag) => (
               <span
                 key={tag.id}
-                className="inline-flex items-center px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] border border-[#e5e6ea] text-[#677084]"
+                className="relative inline-flex items-center px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] border border-[#e5e6ea] text-[#677084] group hover:pr-6 transition-all"
               >
-                {tag.name}
+                <span>{tag.name}</span>
+                <button
+                  onClick={() => handleRemoveTag(tag.id)}
+                  className="absolute right-1 opacity-0 group-hover:opacity-100 transition-opacity hover:text-[#333639]"
+                  title="移除标签"
+                >
+                  <XIcon className="w-3 h-3" />
+                </button>
               </span>
             ))}
-            <button className="inline-flex items-center gap-1 px-2.5 py-1 text-xs text-[#8a8f99] hover:text-[#333639] hover:bg-[#f5f5f5] rounded-full border border-dashed border-[#d4d6dc] transition-colors">
-              <PlusIcon className="w-3 h-3" />
-              添加标签
-            </button>
+            <div className="relative">
+              <button 
+                onClick={() => setShowTagSelector(!showTagSelector)}
+                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs text-[#8a8f99] hover:text-[#333639] hover:bg-[#f5f5f5] rounded-full border border-dashed border-[#d4d6dc] transition-colors"
+              >
+                <PlusIcon className="w-3 h-3" />
+                添加标签
+              </button>
+              {showTagSelector && (
+                <TagSelector
+                  selectedTags={currentNote.tags || []}
+                  onTagAdd={handleAddTag}
+                  onClose={() => setShowTagSelector(false)}
+                />
+              )}
+            </div>
           </div>
 
           {/* 编辑器内容 */}
@@ -736,6 +797,14 @@ function PlusIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+    </svg>
+  );
+}
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   );
 }
