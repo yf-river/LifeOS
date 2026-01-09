@@ -251,6 +251,125 @@ StarterKit.configure({
 
 ---
 
+## 已完成的优化（2026-01-09）
+
+### 标签功能实现
+
+完整实现了笔记详情页的标签管理功能，包括标签的添加、删除、搜索和创建。
+
+#### 功能特性
+
+1. **标签选择器组件 (TagSelector.tsx)**
+   - 搜索框支持实时过滤标签
+   - 显示所有可用标签（排除已添加的）
+   - 智能创建：搜索不存在的标签时显示"创建标签 xxx"选项
+   - 显示标签的笔记数量统计
+   - 支持键盘操作：Enter 创建/选择，Esc 关闭
+   - 点击外部区域自动关闭
+
+2. **标签显示与交互**
+   - 标签卡片采用圆角胶囊设计，浅灰背景
+   - 鼠标悬停时：
+     - 标签右侧平滑扩展
+     - 显示删除按钮（X 图标）
+     - 带有淡入淡出动画效果
+   - 点击删除按钮可移除标签
+
+3. **持续添加模式**
+   - 添加标签后下拉框保持打开状态
+   - 搜索框自动清空并重新聚焦
+   - 可以连续添加多个标签，无需重复点击
+
+4. **UI 细节优化**
+   - 去除搜索框下方的横线边框
+   - "添加标签"按钮使用虚线边框
+   - 下拉框采用白色背景 + 阴影，视觉层级清晰
+
+#### 技术实现
+
+**组件结构**：
+```tsx
+TagSelector
+├── 搜索框 (带实时过滤)
+├── 创建选项 (条件显示)
+└── 标签列表
+    ├── 标签名称
+    └── 笔记数量
+```
+
+**状态管理**：
+- 使用 `useTagsStore` 管理全局标签数据
+- 使用 `addTagToNote()` 添加标签到笔记
+- 使用 `removeTagFromNote()` 从笔记移除标签
+- 使用 `createTag()` 创建新标签
+
+**样式技术**：
+- 使用 `group` + `group-hover` 实现悬停效果
+- 使用 `transition-all` 实现平滑动画
+- 使用 `opacity-0/100` 实现淡入淡出
+- 使用 `absolute` 定位实现删除按钮叠加
+
+**交互优化**：
+```tsx
+// 添加标签后保持打开
+const handleAddTag = async (tag: Tag) => {
+  // ... 添加逻辑
+  // 不调用 setShowTagSelector(false)
+  inputRef.current?.focus(); // 重新聚焦搜索框
+};
+```
+
+#### 核心代码片段
+
+**标签悬停效果**：
+```tsx
+<span className="relative inline-flex items-center px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] border border-[#e5e6ea] text-[#677084] group hover:pr-6 transition-all">
+  <span>{tag.name}</span>
+  <button
+    onClick={() => handleRemoveTag(tag.id)}
+    className="absolute right-1 opacity-0 group-hover:opacity-100 transition-opacity hover:text-[#333639]"
+  >
+    <XIcon className="w-3 h-3" />
+  </button>
+</span>
+```
+
+**搜索与创建**：
+```tsx
+// 搜索框
+<input
+  value={searchText}
+  onChange={(e) => setSearchText(e.target.value)}
+  placeholder="搜索标签..."
+/>
+
+// 条件显示创建选项
+{showCreateOption && (
+  <button onClick={handleCreateTag}>
+    创建标签 "{trimmedSearch}"
+  </button>
+)}
+```
+
+#### 文件变更
+
+| 文件 | 类型 | 说明 |
+|------|------|------|
+| `TagSelector.tsx` | 新建 | 标签选择器组件（173 行） |
+| `NoteDetail.tsx` | 修改 | 集成标签选择器，添加标签管理逻辑 |
+
+#### 相关 API
+
+```typescript
+// 标签相关 API（useTagsStore）
+fetchTags()                      // 获取所有标签
+createTag(name, color?)          // 创建新标签
+addTagToNote(noteId, tagIds)    // 添加标签到笔记
+removeTagFromNote(noteId, tagId) // 从笔记移除标签
+```
+
+---
+
 ## 核心文件说明
 
 ### 1. NoteDetail.tsx（笔记详情页 - 已优化）
@@ -280,6 +399,7 @@ StarterKit.configure({
 | CustomImage | `editor/extensions/CustomImage.ts` | 自定义图片扩展（支持预览） |
 | ImageView | `editor/extensions/ImageView.tsx` | 图片视图组件（点击预览、操作按钮） |
 | VersionHistory | `notes/VersionHistory.tsx` | 版本历史组件 |
+| **TagSelector** | `notes/TagSelector.tsx` | **标签选择器组件（搜索、创建、选择）** |
 
 ### 3. 状态管理
 
@@ -289,6 +409,13 @@ StarterKit.configure({
 - `createNote()`: 创建笔记
 - `setCurrentNote()`: 设置当前笔记
 - `isSaving`: 是否正在保存
+
+**useTagsStore** (`store/tags.ts`):
+- `tags`: 所有标签列表
+- `fetchTags()`: 获取所有标签
+- `createTag()`: 创建新标签
+- `addTagToNote()`: 添加标签到笔记
+- `removeTagFromNote()`: 从笔记移除标签
 
 **useUIStore** (`store/ui.ts`):
 - `viewMode`: 视图模式 ('list' | 'detail')
@@ -304,13 +431,19 @@ StarterKit.configure({
 - [ ] 追加笔记功能实现
 - [ ] 分享功能实现
 - [ ] 智能标签功能
-- [ ] 标签管理交互优化
+- [x] **标签管理功能** ✅ (2026-01-09 已完成)
+  - [x] 标签选择器组件
+  - [x] 标签搜索与创建
+  - [x] 标签添加与移除
+  - [x] 悬停显示删除按钮
 
 ### 2. 体验优化
 
 - [ ] 图片拖拽/粘贴上传
 - [ ] 移动端适配
 - [ ] 更多快捷键支持
+- [ ] 标签颜色选择
+- [ ] 标签批量管理
 
 ### 3. 性能优化
 
