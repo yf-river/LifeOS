@@ -111,4 +111,5 @@ export const apiClient = {
   delete: <T = void>(endpoint: string): Promise<T> => {
     return request<T>(endpoint, { method: 'DELETE' });
   },
+
 };

@@ -29,8 +29,7 @@ const MENU_ITEMS = [
   { id: 'home', label: '首页', icon: 'home', shortcut: '⌘1' },
   { id: 'ai', label: 'AI助手', icon: 'ai', shortcut: '⌘2' },
   { id: 'knowledge', label: '知识库', icon: 'book', shortcut: '⌘3' },
-  { id: 'tags', label: '标签', icon: 'tag', shortcut: '⌘4' },
-  { id: 'trash', label: '回收站', icon: 'trash', shortcut: '⌘5' },
+  { id: 'trash', label: '回收站', icon: 'trash', shortcut: '⌘4' },
 ] as const;
 
 // 动画配置
@@ -228,13 +227,6 @@ function MenuIcon({ name, active }: { name: string; active: boolean }) {
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
           <line x1="8" y1="6" x2="16" y2="6" />
           <line x1="8" y1="10" x2="14" y2="10" />
-        </svg>
-      );
-    case 'tag':
-      return (
-        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-          <line x1="7" y1="7" x2="7.01" y2="7" />
         </svg>
       );
     case 'trash':

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useNotesStore, useTagsStore, useUIStore, Note } from '@/store';
+import { useNotesStore, useUIStore, Note } from '@/store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -16,14 +16,11 @@ import {
   MoreHorizontalIcon,
   PinIcon,
   PinOffIcon,
-  TagIcon,
   TrashIcon,
   MaximizeIcon,
   MinimizeIcon,
   SaveIcon,
   Loader2Icon,
-  XIcon,
-  PlusIcon,
 } from 'lucide-react';
 
 interface EditorHeaderProps {
@@ -40,11 +37,7 @@ export function EditorHeader({
   note,
 }: EditorHeaderProps) {
   const { updateNote, deleteNote, setCurrentNote } = useNotesStore();
-  const { tags, createTag, addTagToNote, removeTagFromNote } = useTagsStore();
   const { editorFullscreen, toggleEditorFullscreen, showConfirmDialog } = useUIStore();
-  
-  const [tagDialogOpen, setTagDialogOpen] = useState(false);
-  const [newTagName, setNewTagName] = useState('');
 
   // 切换置顶
   const handleTogglePin = async () => {
@@ -55,7 +48,7 @@ export function EditorHeader({
   const handleDelete = () => {
     showConfirmDialog({
       title: '确认删除',
-      message: '确定要删除这篇笔记吗？此操作不可恢复。',
+      message: '确定要删除这篇笔记吗?此操作不可恢复。',
       onConfirm: async () => {
         const success = await deleteNote(note.id);
         if (success) {
@@ -63,30 +56,6 @@ export function EditorHeader({
         }
       },
     });
-  };
-
-  // 添加标签
-  const handleAddTag = async (tagId: string) => {
-    if (note.tags?.some((t) => t.id === tagId)) return;
-    await addTagToNote(note.id, [tagId]);
-    // 刷新笔记数据
-    useNotesStore.getState().fetchNote(note.id);
-  };
-
-  // 移除标签
-  const handleRemoveTag = async (tagId: string) => {
-    await removeTagFromNote(note.id, tagId);
-    useNotesStore.getState().fetchNote(note.id);
-  };
-
-  // 创建新标签
-  const handleCreateTag = async () => {
-    if (!newTagName.trim()) return;
-    const tag = await createTag(newTagName.trim());
-    if (tag) {
-      await handleAddTag(tag.id);
-      setNewTagName('');
-    }
   };
 
   return (
@@ -104,72 +73,7 @@ export function EditorHeader({
       {/* 工具行 */}
       <div className="px-8 py-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {/* 标签 */}
-          <div className="flex items-center gap-1 flex-wrap">
-            {note.tags?.map((tag) => (
-              <Badge
-                key={tag.id}
-                variant="tag"
-                className="group"
-                style={{ borderColor: tag.color }}
-              >
-                {tag.name}
-                <button
-                  onClick={() => handleRemoveTag(tag.id)}
-                  className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  <XIcon className="h-3 w-3" />
-                </button>
-              </Badge>
-            ))}
-            
-            {/* 添加标签按钮 */}
-            <Dialog open={tagDialogOpen} onOpenChange={setTagDialogOpen}>
-              <DialogTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-6 px-2">
-                  <TagIcon className="h-3 w-3 mr-1" />
-                  添加标签
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-sm">
-                <DialogHeader>
-                  <DialogTitle>管理标签</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  {/* 创建新标签 */}
-                  <div className="flex gap-2">
-                    <Input
-                      value={newTagName}
-                      onChange={(e) => setNewTagName(e.target.value)}
-                      placeholder="新标签名称"
-                      onKeyDown={(e) => e.key === 'Enter' && handleCreateTag()}
-                    />
-                    <Button onClick={handleCreateTag} size="icon">
-                      <PlusIcon className="h-4 w-4" />
-                    </Button>
-                  </div>
-                  
-                  {/* 可选标签列表 */}
-                  <div className="flex flex-wrap gap-2">
-                    {tags
-                      .filter((tag) => !note.tags?.some((t) => t.id === tag.id))
-                      .map((tag) => (
-                        <Badge
-                          key={tag.id}
-                          variant="outline"
-                          className="cursor-pointer hover:bg-accent"
-                          style={{ borderColor: tag.color }}
-                          onClick={() => handleAddTag(tag.id)}
-                        >
-                          <PlusIcon className="h-3 w-3 mr-1" />
-                          {tag.name}
-                        </Badge>
-                      ))}
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </div>
+          {/* 保留此区域用于未来功能 */}
         </div>
 
         <div className="flex items-center gap-1">

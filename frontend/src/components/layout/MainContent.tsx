@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNotesStore, useTagsStore, useUIStore } from '@/store';
+import { useNotesStore, useUIStore } from '@/store';
 import { Omnibar } from '../omnibar/Omnibar';
 import { NoteList } from '../notes/NoteList';
 import { NoteDetail } from '../notes/NoteDetail';
 import { SearchBar } from './SearchBar';
-import { TagFilterCompact } from '../tags/TagFilter';
 import { EmptyState } from '../ui/EmptyState';
 import { cn } from '@/lib/utils';
 
@@ -36,14 +35,12 @@ import { cn } from '@/lib/utils';
  */
 export function MainContent() {
   const { currentNote, notes, isLoading, fetchNotes } = useNotesStore();
-  const { fetchTags } = useTagsStore();
   const { viewMode } = useUIStore();
   
   // 初始化加载数据
   useEffect(() => {
     fetchNotes();
-    fetchTags();
-  }, [fetchNotes, fetchTags]);
+  }, [fetchNotes]);
   
   // 当选中笔记时显示详情页，否则显示列表
   const showDetail = currentNote !== null && viewMode === 'detail';
@@ -105,12 +102,12 @@ export function MainContent() {
  * 主内容区头部 - 现代化样式
  */
 function MainHeader() {
-  const { fetchNotes, isLoading, filterTagId, searchKeyword } = useNotesStore();
+  const { fetchNotes, isLoading, searchKeyword } = useNotesStore();
   const { notes } = useNotesStore();
   const [showFilters, setShowFilters] = useState(false);
 
   // 是否有活动筛选
-  const hasActiveFilter = filterTagId !== null || searchKeyword !== '';
+  const hasActiveFilter = searchKeyword !== '';
 
   return (
     <header className="bg-white border-b border-[#e8e8e8] sticky top-0 z-10">
@@ -182,9 +179,6 @@ function MainHeader() {
         transition={{ duration: 0.2 }}
         className="overflow-hidden border-t border-[#f0f0f0]"
       >
-        <div className="bg-[#fafafa] py-3 px-6">
-          <TagFilterCompact />
-        </div>
       </motion.div>
     </header>
   );

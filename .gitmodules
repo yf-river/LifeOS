@@ -1,0 +1,60 @@
+[submodule "素材/其它开源项目/Awesome-AITools"]
+	path = 素材/其它开源项目/Awesome-AITools
+	url = https://github.com/ikaijua/Awesome-AITools.git
+[submodule "素材/其它开源项目/khoj"]
+	path = 素材/其它开源项目/khoj
+	url = https://github.com/khoj-ai/khoj.git
+[submodule "素材/其它开源项目/knowledge"]
+	path = 素材/其它开源项目/knowledge
+	url = https://github.com/KnowledgeCanvas/knowledge.git
+[submodule "素材/其它开源项目/FastGPT"]
+	path = 素材/其它开源项目/FastGPT
+	url = https://github.com/labring/FastGPT.git
+[submodule "素材/其它开源项目/Lumina-Note"]
+	path = 素材/其它开源项目/Lumina-Note
+	url = https://github.com/blueberrycongee/Lumina-Note.git
+[submodule "素材/其它开源项目/Second-Me"]
+	path = 素材/其它开源项目/Second-Me
+	url = https://github.com/mindverse/Second-Me.git
+[submodule "素材/其它开源项目/Second-Me-Mcp"]
+	path = 素材/其它开源项目/Second-Me-Mcp
+	url = https://github.com/mindverse/Second-Me-Mcp.git
+[submodule "素材/其它开源项目/Trilium"]
+	path = 素材/其它开源项目/Trilium
+	url = https://github.com/TriliumNext/Trilium.git
+[submodule "素材/其它开源项目/WeKnora"]
+	path = 素材/其它开源项目/WeKnora
+	url = https://github.com/Tencent/WeKnora.git
+[submodule "素材/其它开源项目/awesome-ai-tools"]
+	path = 素材/其它开源项目/awesome-ai-tools
+	url = https://github.com/mahseema/awesome-ai-tools.git
+[submodule "素材/其它开源项目/blinko"]
+	path = 素材/其它开源项目/blinko
+	url = https://github.com/blinkospace/blinko.git
+[submodule "素材/其它开源项目/logseq"]
+	path = 素材/其它开源项目/logseq
+	url = https://github.com/logseq/logseq.git
+[submodule "素材/其它开源项目/memos"]
+	path = 素材/其它开源项目/memos
+	url = https://github.com/usememos/memos.git
+[submodule "素材/其它开源项目/mindsdb"]
+	path = 素材/其它开源项目/mindsdb
+	url = https://github.com/mindsdb/mindsdb.git
+[submodule "素材/其它开源项目/note-gen"]
+	path = 素材/其它开源项目/note-gen
+	url = https://github.com/codexu/note-gen.git
+[submodule "素材/其它开源项目/open-notebook"]
+	path = 素材/其它开源项目/open-notebook
+	url = https://github.com/lfnovo/open-notebook.git
+[submodule "素材/其它开源项目/reor"]
+	path = 素材/其它开源项目/reor
+	url = https://github.com/reorproject/reor.git
+[submodule "素材/其它开源项目/siyuan"]
+	path = 素材/其它开源项目/siyuan
+	url = https://github.com/siyuan-note/siyuan.git
+[submodule "素材/其它开源项目/siyuan-plugin-copilot"]
+	path = 素材/其它开源项目/siyuan-plugin-copilot
+	url = https://github.com/Achuan-2/siyuan-plugin-copilot.git
+[submodule "素材/其它开源项目/surf"]
+	path = 素材/其它开源项目/surf
+	url = https://github.com/deta/surf.git

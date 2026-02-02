@@ -46,7 +46,6 @@ interface Note {
   is_pinned?: boolean;
   source_url?: string;
   images?: string[];
-  tags?: Array<{ id: string; name: string; type?: string; color?: string }>;
   created_at: string;
   updated_at: string;
 }
@@ -90,14 +89,6 @@ export function NoteCard({ note, onClick, isSelected }: NoteCardProps) {
     const date = new Date(note.created_at);
     return date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
   }, [note.created_at]);
-
-  // 用户标签
-  const userTags = useMemo(() => {
-    return (note.tags || []).filter(tag => tag.type !== 'system');
-  }, [note.tags]);
-
-  const visibleTags = userTags.slice(0, 3);
-  const hiddenTagsCount = Math.max(0, userTags.length - 3);
 
   // 处理图片加载错误
   const handleImageError = (index: number) => {
@@ -202,24 +193,6 @@ export function NoteCard({ note, onClick, isSelected }: NoteCardProps) {
               >
                 <SystemTagIcon type={noteType!} />
                 {systemTag.label}
-              </span>
-            )}
-
-            {/* 用户标签 */}
-            {visibleTags.map((tag) => (
-              <span
-                key={tag.id}
-                className="inline-flex items-center px-2 py-1 text-[11px] rounded-lg bg-[#f5f5f5] text-[#5a5f6b] hover:bg-[#ebebeb] transition-colors"
-              >
-                <span className="w-1.5 h-1.5 rounded-full mr-1.5" style={{ backgroundColor: tag.color || '#8a8f99' }} />
-                {tag.name}
-              </span>
-            ))}
-
-            {/* 更多标签数量 */}
-            {hiddenTagsCount > 0 && (
-              <span className="inline-flex items-center px-2 py-1 text-[11px] rounded-lg bg-[#f5f5f5] text-[#8a8f99]">
-                +{hiddenTagsCount}
               </span>
             )}
           </div>

@@ -2,11 +2,10 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useUIStore, useAuthStore, useNotesStore, useTagsStore } from '@/store';
+import { useUIStore, useAuthStore, useNotesStore } from '@/store';
 import { Sidebar } from './Sidebar';
 import { MainContent } from './MainContent';
 import { AIPanel } from './AIPanel';
-import { TagManager } from '../tags/TagManager';
 import { TrashBin } from '../trash/TrashBin';
 import { ConflictDialog } from '../dialogs/ConflictDialog';
 import { Toast } from '../ui/toast';
@@ -25,15 +24,13 @@ export function MainLayout() {
   const { sidebarOpen, aiPanelOpen, activeMenu, toast, hideToast } = useUIStore();
   const { token } = useAuthStore();
   const { fetchNotes, conflictData } = useNotesStore();
-  const { fetchTags } = useTagsStore();
 
   // 初始化数据
   useEffect(() => {
     if (token) {
       fetchNotes();
-      fetchTags();
     }
-  }, [token, fetchNotes, fetchTags]);
+  }, [token, fetchNotes]);
 
   // 全局键盘快捷键
   useEffect(() => {
@@ -73,9 +70,7 @@ export function MainLayout() {
 
       {/* 主内容区 - 自适应 */}
       <main className="flex-1 min-w-0 h-full overflow-hidden">
-        {activeMenu === 'tags' ? (
-          <TagManager />
-        ) : activeMenu === 'trash' ? (
+        {activeMenu === 'trash' ? (
           <TrashBin />
         ) : (
           <MainContent />

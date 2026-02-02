@@ -65,7 +65,6 @@ interface NotesState {
   pageSize: number;
   
   // 过滤
-  filterTagId: string | null;
   filterPinned: boolean;
   searchKeyword: string;
   
@@ -82,7 +81,6 @@ interface NotesState {
   
   // UI Actions
   setCurrentNote: (note: Note | null) => void;
-  setFilterTag: (tagId: string | null) => void;
   setFilterPinned: (pinned: boolean) => void;
   clearConflict: () => void;
   resolveConflict: (useServer: boolean) => void;
@@ -98,7 +96,6 @@ export const useNotesStore = create<NotesState>((set, get) => ({
   total: 0,
   page: 1,
   pageSize: 20,
-  filterTagId: null,
   filterPinned: false,
   searchKeyword: '',
   conflictData: null,
@@ -106,9 +103,8 @@ export const useNotesStore = create<NotesState>((set, get) => ({
   fetchNotes: async (page = 1) => {
     set({ isLoading: true, error: null });
     try {
-      const { filterTagId, filterPinned, pageSize } = get();
+      const { filterPinned, pageSize } = get();
       const params: Record<string, unknown> = { page, page_size: pageSize };
-      if (filterTagId) params.tag_id = filterTagId;
       if (filterPinned) params.is_pinned = 'true';
       
       const notes = await apiClient.get<Note[]>('/notes', params);
@@ -241,7 +237,6 @@ export const useNotesStore = create<NotesState>((set, get) => ({
   },
 
   setCurrentNote: (note) => set({ currentNote: note }),
-  setFilterTag: (tagId) => set({ filterTagId: tagId }),
   setFilterPinned: (pinned) => set({ filterPinned: pinned }),
   
   clearConflict: () => set({ conflictData: null }),

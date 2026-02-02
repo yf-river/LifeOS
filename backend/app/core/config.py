@@ -48,6 +48,11 @@ class Settings(BaseSettings):
     OPENAI_BASE_URL: str = "https://api.openai.com/v1"
     OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-small"
     OPENAI_EMBEDDING_DIMENSIONS: int = 1536
+    
+    # ADP 工作流配置
+    ADP_BOT_APP_KEY: str = "xQMrffLKSowUZBGLRFWAikQaNTZmxzuaYjCRqnyQsmCGrnGvhGwUsmvttBFXwOdtqVRJVNrsgItdsMnRuHFILGlnGgPlMRAqiddmxCWaUdCVEYejOWJBZwVXRbEYdTmN"
+    ADP_BASE_URL: str = "https://wss.lke.cloud.tencent.com/v1/qbot/chat/sse"
+    ADP_DEFAULT_MODEL: str = "lke-deepseek-v3"
 
     # RAG 配置
     RAG_CHUNK_SIZE: int = 500      # 文本分块大小
@@ -57,6 +62,10 @@ class Settings(BaseSettings):
     # 回收站
     TRASH_RETENTION_DAYS: int = 30
     TRASH_CLEANUP_INTERVAL_HOURS: int = 24
+    
+    # CodeBuddy Agent SDK
+    CODEBUDDY_CODE_PATH: str = "/Users/huyunfei/.nvm/versions/node/v20.19.4/bin/codebuddy"
+    CODEBUDDY_API_KEY: str = "ck_f8yt5pg9m8zk.utV_pRrivwFP1YN9oX5_4g5e0dMjNCI2Orft7vfFIpY"
 
 
 @lru_cache
